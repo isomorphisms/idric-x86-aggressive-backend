@@ -4,6 +4,7 @@ set -euo pipefail
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 pins="$repo_root/research/source-pins.json"
 
+xed_release="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["intel_xed"]["release"])' "$pins")"
 xed_sha="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["intel_xed"]["commit"])' "$pins")"
 mbuild_sha="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["intel_mbuild"]["commit"])' "$pins")"
 
@@ -36,9 +37,14 @@ fetch_commit https://github.com/intelxed/mbuild.git "$mbuild_sha" "$work/mbuild"
 python3 "$repo_root/scripts/xed-json-to-inventory.py" \
     "$work/xed-db.json" \
     --out-dir "$repo_root/generated" \
-    --summary "$repo_root/docs/x86-isa-inventory.generated.md"
+    --summary "$repo_root/docs/x86-isa-inventory.generated.md" \
+    --source-revision "$xed_release" \
+    --source-reference "intelxed/xed@$xed_sha"
+
+python3 "$repo_root/scripts/validate-xed-inventory.py"
 
 printf 'Generated %s\n' "$repo_root/generated/xed-iclasses.txt"
 printf 'Generated %s\n' "$repo_root/generated/xed-iforms.txt"
 printf 'Generated %s\n' "$repo_root/generated/xed-instructions.tsv"
+printf 'Generated %s\n' "$repo_root/generated/xed-iform-index.tsv"
 printf 'Generated %s\n' "$repo_root/docs/x86-isa-inventory.generated.md"

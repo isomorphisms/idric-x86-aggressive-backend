@@ -17,6 +17,13 @@
     "url": "https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html",
     "notes": "Volume 2 is the architectural instruction reference A-Z; XED is the machine-readable inventory."
   },
+  "intel_isa_extensions_programming_reference": {
+    "document": "319433",
+    "revision": "062",
+    "reference": "319433-062",
+    "url": "https://www.intel.com/content/www/us/en/content-details/819680/intel-architecture-instruction-set-extensions-programming-reference.html",
+    "notes": "Published/future Intel architecture extensions. Intel SDE 10.13.1 (2026-07-28) identifies 319433-062 as its corresponding programming-reference revision."
+  },
   "amd64_apm_combined": {
     "document": "40332",
     "revision": "4.09",

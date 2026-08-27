@@ -9,6 +9,7 @@ on:
       - research/source-pins.json
       - scripts/refresh-xed-inventory.sh
       - scripts/xed-json-to-inventory.py
+      - scripts/validate-xed-inventory.py
   workflow_dispatch:
 
 permissions:
@@ -23,7 +24,7 @@ jobs:
           ref: research/x86-isa-inventory
           fetch-depth: 0
 
-      - name: Generate inventory
+      - name: Generate and validate inventory
         run: bash scripts/refresh-xed-inventory.sh
 
       - name: Commit generated inventory
