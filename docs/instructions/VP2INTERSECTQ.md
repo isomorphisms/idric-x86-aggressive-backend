@@ -1,0 +1,39 @@
+# VP2INTERSECTQ
+
+`VP2INTERSECTQ` compares every element of two packed integer vectors and produces two mask results indicating which elements of each source occur anywhere in the other source. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+
+## Family and availability
+
+- XED extension(s): `AVX512EVEX`
+- XED category/categories: `AVX512_VP2INTERSECT`
+- ISA set(s): `AVX512_VP2INTERSECT_128`, `AVX512_VP2INTERSECT_256`, `AVX512_VP2INTERSECT_512`
+- vendor classification: `shared-or-unspecified`
+- XED mode restriction(s): `16 32 64`
+- usable at CPL 3 subject to feature and OS enablement
+
+## Architectural effects
+
+Representative explicit operands: `MASK XMM MEM`; `MASK XMM XMM`; `MASK YMM MEM`; …. Representative implicit state: not uniformly recorded.
+
+Recorded flag behavior: not uniformly recorded.
+
+## Important forms
+
+- `VP2INTERSECTQ_MASKmskw_XMMu64_MEMu64_AVX512` — `VP2INTERSECTQ`
+- `VP2INTERSECTQ_MASKmskw_XMMu64_XMMu64_AVX512` — `VP2INTERSECTQ`
+- `VP2INTERSECTQ_MASKmskw_YMMu64_MEMu64_AVX512` — `VP2INTERSECTQ`
+- `VP2INTERSECTQ_MASKmskw_YMMu64_YMMu64_AVX512` — `VP2INTERSECTQ`
+- `VP2INTERSECTQ_MASKmskw_ZMMu64_MEMu64_AVX512` — `VP2INTERSECTQ`
+- `VP2INTERSECTQ_MASKmskw_ZMMu64_ZMMu64_AVX512` — `VP2INTERSECTQ`
+
+The form list is intentionally representative rather than a copy of every encoding row. The row-level oracle remains `generated/xed-instructions.tsv`.
+
+## Backend notes
+
+For Idriç this is an optimization-target candidate rather than baseline code generation. Selection should require feature-aware target information and an exact semantic oracle.
+
+## Sources
+
+- Intel XED `v2026.08.23` / commit `0bcb6237345c5066726dcc08b3d87928df3b5b26` — machine-readable ICLASS/IFORM and encoding metadata.
+- Intel 64 and IA-32 SDM revision `092` — architectural semantics.
+- AMD64 Architecture Programmer's Manual revisions pinned in `research/source-pins.json` — vendor-specific availability and semantic cross-checks.
