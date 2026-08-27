@@ -11,7 +11,7 @@ x86 needs at least two useful levels of inventory:
 
 The distinction matters. Treating `ADD` as one instruction discards operand widths, register versus memory forms, encoding spaces, APX/EVEX distinctions, mode restrictions, and other information the backend will eventually need.
 
-Intel XED's published generated header currently has 1,960 real ICLASS values, excluding its `INVALID` and `LAST` sentinels. The IFORM set is much larger.
+For completeness checks, this repository uses the normalized database generated from the pinned XED release rather than a separately published web header. The `v2026.08.23` database currently yields 10,994 instruction records, 1,987 unique ICLASS values, and 9,001 unique IFORM values.
 
 ## Primary machine-readable source
 
