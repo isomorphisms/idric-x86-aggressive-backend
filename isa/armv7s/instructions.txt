@@ -1,0 +1,3 @@
+# armv7s uses the ARMv7-A/Thumb-2 mnemonic inventory.
+# Canonical list in ../armv7/instructions.txt
+# Important A6 target: Thumb-2, NEON/VFP-family operations; do not invent Apple-only opcodes.

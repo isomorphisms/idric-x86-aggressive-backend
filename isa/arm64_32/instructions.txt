@@ -1,0 +1,2 @@
+# arm64_32 uses the AArch64 mnemonic inventory in ../aarch64/instructions.txt.
+# Do not confuse 32-bit pointers with 32-bit instruction execution.

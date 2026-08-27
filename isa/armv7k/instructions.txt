@@ -1,0 +1,2 @@
+# armv7k uses the ARMv7-family mnemonic inventory.
+# Canonical list in ../armv7/instructions.txt
