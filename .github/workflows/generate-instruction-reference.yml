@@ -3,11 +3,12 @@ name: Generate x86 instruction reference
 on:
   push:
     branches:
-      - docs/x86-instruction-reference
+      - docs/bundle-x86-instruction-reference
     paths:
       - scripts/generate-instruction-docs.py
       - scripts/generate-instruction-docs-reviewed.py
       - scripts/generate-instruction-docs-complete.py
+      - scripts/bundle-instruction-docs.py
       - generated/xed-instructions.tsv
       - generated/xed-iclasses.txt
       - research/source-pins.json
@@ -24,24 +25,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: docs/x86-instruction-reference
+          ref: docs/bundle-x86-instruction-reference
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Generate complete reviewed pages
+      - name: Generate complete reviewed instruction prose
         run: python3 scripts/generate-instruction-docs-complete.py
-      - name: Verify deterministic regeneration
-        run: python3 scripts/generate-instruction-docs-complete.py --check
       - name: Require zero semantic fallbacks
         run: test ! -s generated/instruction-doc-fallbacks.txt
+      - name: Bundle instruction reference by family
+        run: python3 scripts/bundle-instruction-docs.py
+      - name: Verify exact bundled coverage
+        run: python3 scripts/bundle-instruction-docs.py --check
       - name: Commit generated reference
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/instructions generated/instruction-doc-fallbacks.txt
+          git add -A docs/instructions generated/instruction-doc-fallbacks.txt
           if git diff --cached --quiet; then
             exit 0
           fi
-          git commit -m "Complete x86 instruction semantic reference"
-          git push origin HEAD:docs/x86-instruction-reference
+          git commit -m "Bundle x86 instruction semantic reference"
+          git push origin HEAD:docs/bundle-x86-instruction-reference
