@@ -1,0 +1,34 @@
+# ERETS
+
+`ERETS` implements the distinct architectural operation named ERETS in XED category FRED; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+
+## Family and availability
+
+- XED extension(s): `FRED`
+- XED category/categories: `FRED`
+- ISA set(s): `FRED`
+- vendor classification: `shared-or-unspecified`
+- XED mode restriction(s): `64`
+- requires CPL 0; ordinary user-mode code must not emit it
+
+## Architectural effects
+
+Representative explicit operands: not uniformly recorded. Representative implicit state: `STACKPOP RIP RSP`.
+
+Recorded flag behavior: `MUST [  id-pop vip-pop vif-pop ac-pop vm-pop vm-pop rf-pop nt-pop nt-pop iopl-pop iopl-pop of-pop df-pop if-pop tf-pop sf-pop zf-pop af-pop pf-pop cf-pop  ]`.
+
+## Important forms
+
+- `ERETS` — `ERETS`
+
+The form list is intentionally representative rather than a copy of every encoding row. The row-level oracle remains `generated/xed-instructions.tsv`.
+
+## Backend notes
+
+For Idriç this is inventory/reference material first. It should not appear in ordinary user-mode lowering; any future use belongs behind an explicit runtime, kernel, hypervisor, or privileged target boundary.
+
+## Sources
+
+- Intel XED `v2026.08.23` / commit `0bcb6237345c5066726dcc08b3d87928df3b5b26` — machine-readable ICLASS/IFORM and encoding metadata.
+- Intel 64 and IA-32 SDM revision `092` — architectural semantics.
+- AMD64 Architecture Programmer's Manual revisions pinned in `research/source-pins.json` — vendor-specific availability and semantic cross-checks.
