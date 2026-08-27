@@ -1,6 +1,6 @@
 # SAVEPREVSSP
 
-`SAVEPREVSSP` saves the architectural state selected by the instruction. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`SAVEPREVSSP` writes a restore token for the previous CET shadow-stack pointer after a shadow-stack switch. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

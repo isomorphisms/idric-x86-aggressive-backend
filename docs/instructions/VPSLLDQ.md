@@ -1,6 +1,6 @@
 # VPSLLDQ
 
-`VPSLLDQ` implements the distinct architectural operation named VPSLLDQ in XED category AVX, AVX2, AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 8 normalized encoding records and 8 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPSLLDQ` shifts packed integer elements left logically, filling vacated low bits with zeros; vector-count forms obtain counts from vector operands while immediate/scalar-count forms use their encoded count source. The pinned XED inventory represents it with 8 normalized encoding records and 8 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

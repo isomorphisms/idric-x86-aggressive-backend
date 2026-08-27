@@ -1,6 +1,6 @@
 # VAESKEYGENASSIST
 
-`VAESKEYGENASSIST` implements the distinct architectural operation named VAESKEYGENASSIST in XED category AES; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VAESKEYGENASSIST` computes S-box, rotation, and round-constant helper values used during AES key-schedule expansion. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

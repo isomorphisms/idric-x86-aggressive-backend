@@ -1,6 +1,6 @@
 # VPINSRD
 
-`VPINSRD` implements the distinct architectural operation named VPINSRD in XED category AVX, AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 8 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPINSRD` inserts a scalar 32-bit doubleword from a register or memory source into the packed destination lane selected by the immediate index. The pinned XED inventory represents it with 8 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

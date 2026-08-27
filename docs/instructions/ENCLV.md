@@ -1,6 +1,6 @@
 # ENCLV
 
-`ENCLV` implements the distinct architectural operation named ENCLV in XED category SGX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`ENCLV` dispatches a virtualization-oriented Intel SGX leaf selected in EAX for enclave-management operations exposed to a VMM. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

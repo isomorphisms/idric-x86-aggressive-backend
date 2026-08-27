@@ -1,6 +1,6 @@
 # POPA
 
-`POPA` implements the distinct architectural operation named POPA in XED category POP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`POPA` pops the legacy 16-bit general-purpose register set in the architecturally defined order while discarding the saved SP slot. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # XLAT
 
-`XLAT` implements the distinct architectural operation named XLAT in XED category MISC; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`XLAT` uses the unsigned byte in AL as an index from the implicit table base register, loads that table byte, and replaces AL with the result. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # VFIXUPIMMSD
 
-`VFIXUPIMMSD` implements the distinct architectural operation named VFIXUPIMMSD in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VFIXUPIMMSD` classifies exceptional floating-point cases in a scalar double-precision floating-point element and selects replacement/result actions from table and immediate control operands. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

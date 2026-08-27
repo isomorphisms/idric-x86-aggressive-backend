@@ -1,6 +1,6 @@
 # FNSAVE
 
-`FNSAVE` saves the architectural state selected by the instruction. The pinned XED inventory represents it with 7 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FNSAVE` stores the x87 environment and register stack to memory, then reinitializes x87 state, without first waiting for pending exceptions. The pinned XED inventory represents it with 7 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # SEAMOPS
 
-`SEAMOPS` implements the distinct architectural operation named SEAMOPS in XED category LEGACY; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`SEAMOPS` invokes a SEAM-specific operation while software is executing in SEAM root operation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

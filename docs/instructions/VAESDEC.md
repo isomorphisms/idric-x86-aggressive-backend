@@ -1,6 +1,6 @@
 # VAESDEC
 
-`VAESDEC` implements the distinct architectural operation named VAESDEC in XED category AES, VAES; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 10 normalized encoding records and 10 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VAESDEC` performs an AES decryption-round transformation on packed 128-bit AES state blocks using the supplied round key. The pinned XED inventory represents it with 10 normalized encoding records and 10 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

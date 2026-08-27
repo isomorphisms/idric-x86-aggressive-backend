@@ -1,6 +1,6 @@
 # POP2P
 
-`POP2P` implements the distinct architectural operation named POP2P in XED category POP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`POP2P` uses Intel APX's paired pop form to restore two general-purpose registers with the preserve-oriented semantics defined for the P-suffixed form. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

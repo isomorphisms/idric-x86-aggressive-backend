@@ -1,6 +1,6 @@
 # TOP4MXBF8PS
 
-`TOP4MXBF8PS` implements the distinct architectural operation named TOP4MXBF8PS in XED category AMX_TILE; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`TOP4MXBF8PS` computes an ACE block-scaled mixed-format tile outer-product, applying block-scale-register factors to the encoded low-precision source formats before accumulating wider results. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

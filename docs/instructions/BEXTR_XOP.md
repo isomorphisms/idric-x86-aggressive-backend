@@ -1,6 +1,6 @@
 # BEXTR_XOP
 
-`BEXTR_XOP` implements the distinct architectural operation named BEXTR_XOP in XED category TBM; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`BEXTR_XOP` extracts a variable contiguous bit field using AMD XOP's BEXTR encoding, with the start position and field length supplied by the control operand. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

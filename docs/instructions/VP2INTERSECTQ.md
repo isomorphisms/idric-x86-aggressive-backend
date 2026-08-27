@@ -1,6 +1,6 @@
 # VP2INTERSECTQ
 
-`VP2INTERSECTQ` implements the distinct architectural operation named VP2INTERSECTQ in XED category AVX512_VP2INTERSECT; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VP2INTERSECTQ` compares every element of two packed integer vectors and produces two mask results indicating which elements of each source occur anywhere in the other source. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

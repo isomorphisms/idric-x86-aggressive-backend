@@ -1,6 +1,6 @@
 # VRNDSCALEBF16
 
-`VRNDSCALEBF16` implements the distinct architectural operation named VRNDSCALEBF16 in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VRNDSCALEBF16` scales and rounds bfloat16 elements according to immediate rounding/scale control, then rescales the rounded values to the requested numerical domain. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

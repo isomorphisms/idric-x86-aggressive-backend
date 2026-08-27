@@ -1,6 +1,6 @@
 # BSRMOVF
 
-`BSRMOVF` moves or copies data between its permitted operand classes. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`BSRMOVF` loads the full 1024-bit ACE block-scale register from two 512-bit source halves. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

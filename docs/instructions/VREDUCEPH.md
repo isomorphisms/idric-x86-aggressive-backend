@@ -1,6 +1,6 @@
 # VREDUCEPH
 
-`VREDUCEPH` implements the distinct architectural operation named VREDUCEPH in XED category FP16; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VREDUCEPH` reduces packed IEEE binary16 floating-point elements by subtracting an integer multiple of a power of two selected by immediate control, using the instruction's explicit rounding mode. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

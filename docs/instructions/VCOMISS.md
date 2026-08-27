@@ -1,6 +1,6 @@
 # VCOMISS
 
-`VCOMISS` implements the distinct architectural operation named VCOMISS in XED category AVX, AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 5 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VCOMISS` compares two scalar single-precision values, writes the integer condition flags used by branches and SET/CMOV instructions, and uses ordered-comparison exception behavior for NaNs. The pinned XED inventory represents it with 5 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

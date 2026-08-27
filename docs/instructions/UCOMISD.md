@@ -1,6 +1,6 @@
 # UCOMISD
 
-`UCOMISD` implements the distinct architectural operation named UCOMISD in XED category SSE; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`UCOMISD` compares two scalar double-precision values, writes the integer condition flags used by branches and SET/CMOV instructions, and uses unordered-comparison exception behavior for NaNs. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

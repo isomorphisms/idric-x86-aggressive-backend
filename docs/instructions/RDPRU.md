@@ -1,6 +1,6 @@
 # RDPRU
 
-`RDPRU` implements the distinct architectural operation named RDPRU in XED category RDPRU; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`RDPRU` reads an AMD processor register selected by ECX into EDX:EAX when the selected register is permitted to software at the current privilege level. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

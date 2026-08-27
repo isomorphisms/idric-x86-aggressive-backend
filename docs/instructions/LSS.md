@@ -1,6 +1,6 @@
 # LSS
 
-`LSS` implements the distinct architectural operation named LSS in XED category SEGOP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`LSS` loads an offset and an accompanying selector from memory, placing the selector in SS and the offset in a general-purpose register with the instruction's stack-segment ordering semantics. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

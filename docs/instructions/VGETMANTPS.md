@@ -1,6 +1,6 @@
 # VGETMANTPS
 
-`VGETMANTPS` implements the distinct architectural operation named VGETMANTPS in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VGETMANTPS` normalizes packed single-precision floating-point elements to expose mantissas in an interval selected by immediate control and applies the requested sign control. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

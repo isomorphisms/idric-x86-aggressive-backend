@@ -1,6 +1,6 @@
 # VFRCZSD
 
-`VFRCZSD` implements the distinct architectural operation named VFRCZSD in XED category XOP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VFRCZSD` extracts the fractional part of a scalar double-precision floating-point element using AMD XOP FRCZ semantics. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

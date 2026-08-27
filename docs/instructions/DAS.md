@@ -1,6 +1,6 @@
 # DAS
 
-`DAS` implements the distinct architectural operation named DAS in XED category DECIMAL; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`DAS` adjusts AL after subtraction so the low and high nibbles represent a valid packed-BCD result, updating legacy arithmetic flags. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # VPSHRDD
 
-`VPSHRDD` implements the distinct architectural operation named VPSHRDD in XED category VBMI2; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPSHRDD` performs packed double-width right shifts, shifting destination elements right while importing replacement high bits from the paired source elements. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # TOP4BUSD
 
-`TOP4BUSD` implements the distinct architectural operation named TOP4BUSD in XED category AMX_TILE; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`TOP4BUSD` computes an ACE four-way low-precision integer tile outer-product and accumulates widened products, with signedness selected by the mnemonic. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

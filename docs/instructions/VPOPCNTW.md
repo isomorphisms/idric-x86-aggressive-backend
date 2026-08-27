@@ -1,6 +1,6 @@
 # VPOPCNTW
 
-`VPOPCNTW` implements the distinct architectural operation named VPOPCNTW in XED category AVX512, AVX512_BITALG; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPOPCNTW` counts set bits independently in each packed integer lane and writes the per-lane population counts. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

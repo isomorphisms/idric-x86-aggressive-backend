@@ -1,6 +1,6 @@
 # TESTUI
 
-`TESTUI` tests its encoded operands and records the Boolean result through flags or mask state. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`TESTUI` copies the current user-interrupt enable state into the zero flag so software can test whether user interrupts are enabled. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

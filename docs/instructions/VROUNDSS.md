@@ -1,6 +1,6 @@
 # VROUNDSS
 
-`VROUNDSS` implements the distinct architectural operation named VROUNDSS in XED category AVX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VROUNDSS` rounds a scalar single-precision floating-point element according to immediate rounding control using the VEX-encoded three-operand form. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

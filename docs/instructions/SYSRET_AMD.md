@@ -1,6 +1,6 @@
 # SYSRET_AMD
 
-`SYSRET_AMD` implements the distinct architectural operation named SYSRET_AMD in XED category SYSRET; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`SYSRET_AMD` returns from an AMD64 SYSCALL handler using the AMD-defined SYSRET privilege and register-restoration rules. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

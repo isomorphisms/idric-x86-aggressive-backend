@@ -1,6 +1,6 @@
 # VRNDSCALESH
 
-`VRNDSCALESH` implements the distinct architectural operation named VRNDSCALESH in XED category FP16; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VRNDSCALESH` scales and rounds a scalar IEEE binary16 floating-point element according to immediate rounding/scale control, then rescales the rounded values to the requested numerical domain. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

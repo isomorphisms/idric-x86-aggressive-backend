@@ -1,6 +1,6 @@
 # XSAVES64
 
-`XSAVES64` saves the architectural state selected by the instruction. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`XSAVES64` saves the enabled extended processor-state components to an XSAVE area using the supervisor-aware XSAVE semantics with the 64-bit pointer-format variant. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

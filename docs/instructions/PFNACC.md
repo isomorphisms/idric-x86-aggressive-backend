@@ -1,6 +1,6 @@
 # PFNACC
 
-`PFNACC` implements the distinct architectural operation named PFNACC in XED category 3DNOW; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PFNACC` performs AMD 3DNow! negative horizontal accumulation over packed floating-point elements. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

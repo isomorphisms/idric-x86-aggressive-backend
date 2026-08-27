@@ -1,6 +1,6 @@
 # VBCSTNESH2PS
 
-`VBCSTNESH2PS` implements the distinct architectural operation named VBCSTNESH2PS in XED category BROADCAST; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VBCSTNESH2PS` broadcasts selected binary16 source values into single-precision floating-point lanes using the instruction's narrow-source element-selection semantics. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # VEXP2PD
 
-`VEXP2PD` implements the distinct architectural operation named VEXP2PD in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VEXP2PD` computes a hardware approximate 2^x operation independently for packed double-precision floating-point elements. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # VFPCLASSSD
 
-`VFPCLASSSD` implements the distinct architectural operation named VFPCLASSSD in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VFPCLASSSD` classifies each a scalar double-precision floating-point element against floating-point classes selected by an immediate and writes the classification result to a mask register. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

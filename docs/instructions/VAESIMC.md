@@ -1,6 +1,6 @@
 # VAESIMC
 
-`VAESIMC` implements the distinct architectural operation named VAESIMC in XED category AES; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VAESIMC` applies AES inverse MixColumns to an encoded round key so it can be used by the AES decryption-round instructions. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

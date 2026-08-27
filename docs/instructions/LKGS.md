@@ -1,6 +1,6 @@
 # LKGS
 
-`LKGS` implements the distinct architectural operation named LKGS in XED category LKGS; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`LKGS` loads the kernel GS-base state used by FRED-compatible operating systems without performing a full SWAPGS-style exchange. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

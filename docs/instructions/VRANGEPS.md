@@ -1,6 +1,6 @@
 # VRANGEPS
 
-`VRANGEPS` implements the distinct architectural operation named VRANGEPS in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VRANGEPS` selects and sign-controls range extrema for packed single-precision floating-point elements according to immediate control, combining min/max-style selection with the encoded sign rule. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

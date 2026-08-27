@@ -1,6 +1,6 @@
 # PUSHFD
 
-`PUSHFD` implements the distinct architectural operation named PUSHFD in XED category PUSH; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PUSHFD` pushes the 32-bit EFLAGS image onto the stack subject to privilege-defined masking of individual flag bits. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

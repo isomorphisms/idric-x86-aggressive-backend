@@ -1,6 +1,6 @@
 # FXSAVE64
 
-`FXSAVE64` saves the architectural state selected by the instruction. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FXSAVE64` stores x87, MMX, SSE, and MXCSR state using the 64-bit FXSAVE pointer layout. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # ENCODEKEY128
 
-`ENCODEKEY128` implements the distinct architectural operation named ENCODEKEY128 in XED category KEYLOCKER; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`ENCODEKEY128` encodes a 128-bit AES key under Intel Key Locker's internal wrapping key and writes the resulting key handle. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

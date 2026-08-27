@@ -1,6 +1,6 @@
 # LSL
 
-`LSL` implements the distinct architectural operation named LSL in XED category SYSTEM; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`LSL` loads a segment or system descriptor's effective limit into a general-purpose register when descriptor and privilege checks succeed. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

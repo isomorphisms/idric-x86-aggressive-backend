@@ -1,6 +1,6 @@
 # WRMSRNS
 
-`WRMSRNS` implements the distinct architectural operation named WRMSRNS in XED category APX, VEX, WRMSRNS; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 3 normalized encoding records and 3 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`WRMSRNS` writes the model-specific register selected by ECX using the non-serializing WRMSR variant. The pinned XED inventory represents it with 3 normalized encoding records and 3 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

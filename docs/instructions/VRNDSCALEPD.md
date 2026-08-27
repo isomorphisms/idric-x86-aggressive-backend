@@ -1,6 +1,6 @@
 # VRNDSCALEPD
 
-`VRNDSCALEPD` implements the distinct architectural operation named VRNDSCALEPD in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VRNDSCALEPD` scales and rounds packed double-precision floating-point elements according to immediate rounding/scale control, then rescales the rounded values to the requested numerical domain. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

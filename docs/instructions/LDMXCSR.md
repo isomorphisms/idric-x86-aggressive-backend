@@ -1,6 +1,6 @@
 # LDMXCSR
 
-`LDMXCSR` implements the distinct architectural operation named LDMXCSR in XED category SSE; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`LDMXCSR` loads the SSE/AVX floating-point control and status register MXCSR from a 32-bit memory image. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

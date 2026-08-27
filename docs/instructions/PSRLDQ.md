@@ -1,6 +1,6 @@
 # PSRLDQ
 
-`PSRLDQ` implements the distinct architectural operation named PSRLDQ in XED category SSE; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PSRLDQ` shifts packed integer elements right logically, filling vacated high bits with zeros; vector-count forms permit per-element counts where the encoding provides them. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

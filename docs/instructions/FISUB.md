@@ -1,6 +1,6 @@
 # FISUB
 
-`FISUB` subtracts values in the operand format encoded by the mnemonic (byte elements). The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FISUB` subtracts a signed integer memory operand from ST(0) using x87 floating-point arithmetic. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

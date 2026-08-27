@@ -1,6 +1,6 @@
 # TILEMOVROW
 
-`TILEMOVROW` moves or copies data between its permitted operand classes. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`TILEMOVROW` moves a selected row of ACE tile data into the instruction's vector destination so row-oriented tile data can be consumed outside the tile register file. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

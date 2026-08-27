@@ -1,6 +1,6 @@
 # MCOMMIT
 
-`MCOMMIT` implements the distinct architectural operation named MCOMMIT in XED category MISC; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`MCOMMIT` orders AMD persistent-memory writes so prior stores covered by the instruction's persistence rules are committed toward the persistence domain before later dependent software proceeds. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

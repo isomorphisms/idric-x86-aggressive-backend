@@ -1,6 +1,6 @@
 # SEAMCALL
 
-`SEAMCALL` implements the distinct architectural operation named SEAMCALL in XED category LEGACY; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`SEAMCALL` transfers from legacy VMX-root operation into SEAM VMX-root operation to invoke a SEAM-module service. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

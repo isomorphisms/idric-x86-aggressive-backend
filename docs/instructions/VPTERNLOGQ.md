@@ -1,6 +1,6 @@
 # VPTERNLOGQ
 
-`VPTERNLOGQ` implements the distinct architectural operation named VPTERNLOGQ in XED category LOGICAL; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPTERNLOGQ` computes an arbitrary three-input bitwise Boolean function on packed integer operands, with the immediate byte acting as the truth table. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

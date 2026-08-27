@@ -1,6 +1,6 @@
 # VPEXTRW_C5
 
-`VPEXTRW_C5` implements the distinct architectural operation named VPEXTRW_C5 in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPEXTRW_C5` extracts the packed integer lane selected by an immediate index and writes it to a general-purpose register or memory destination. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # PTWRITE
 
-`PTWRITE` writes the architectural state or device value selected by its operands. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PTWRITE` writes a software-supplied payload into Intel Processor Trace when PTWRITE tracing is enabled, allowing software events to appear in the trace stream. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

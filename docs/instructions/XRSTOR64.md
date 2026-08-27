@@ -1,6 +1,6 @@
 # XRSTOR64
 
-`XRSTOR64` computes a bitwise inclusive-or over its operands. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`XRSTOR64` restores selected extended processor-state components from an XSAVE-format memory area using the standard restore semantics with the 64-bit pointer-format variant. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

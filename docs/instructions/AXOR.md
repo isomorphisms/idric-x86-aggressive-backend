@@ -1,6 +1,6 @@
 # AXOR
 
-`AXOR` computes a bitwise exclusive-or over its operands. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`AXOR` atomically XORs a register value into a memory operand, implementing the RAO-INT atomic-XOR operation. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

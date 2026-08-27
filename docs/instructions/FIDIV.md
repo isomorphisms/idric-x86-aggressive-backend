@@ -1,6 +1,6 @@
 # FIDIV
 
-`FIDIV` divides values in the operand format encoded by the mnemonic (its encoded scalar or vector elements). The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FIDIV` divides ST(0) by a signed integer memory operand using x87 floating-point arithmetic. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

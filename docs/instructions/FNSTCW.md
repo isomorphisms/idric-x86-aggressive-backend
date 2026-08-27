@@ -1,6 +1,6 @@
 # FNSTCW
 
-`FNSTCW` implements the distinct architectural operation named FNSTCW in XED category X87_ALU; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FNSTCW` stores the x87 control word to memory without first waiting for pending x87 exceptions. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

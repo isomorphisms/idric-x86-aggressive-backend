@@ -1,6 +1,6 @@
 # FISUBR
 
-`FISUBR` subtracts values in the operand format encoded by the mnemonic (its encoded scalar or vector elements). The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FISUBR` subtracts ST(0) from a signed integer memory operand and leaves the x87 floating-point result in ST(0). The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

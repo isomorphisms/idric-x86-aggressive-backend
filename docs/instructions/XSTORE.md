@@ -1,6 +1,6 @@
 # XSTORE
 
-`XSTORE` stores data or architectural state to its encoded destination. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`XSTORE` requests random bytes from VIA PadLock's hardware random-number generator and stores them through the instruction's implicit destination/count interface. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

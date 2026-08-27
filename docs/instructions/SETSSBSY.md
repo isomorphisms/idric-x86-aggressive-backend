@@ -1,6 +1,6 @@
 # SETSSBSY
 
-`SETSSBSY` implements the distinct architectural operation named SETSSBSY in XED category CET; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`SETSSBSY` sets the busy state associated with a supervisor shadow stack so CET can track exclusive active use. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # VPSIGND
 
-`VPSIGND` implements the distinct architectural operation named VPSIGND in XED category AVX, AVX2; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPSIGND` conditionally negates, zeros, or preserves each packed integer element according to the sign of the corresponding control element. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

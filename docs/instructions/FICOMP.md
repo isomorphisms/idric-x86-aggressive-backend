@@ -1,6 +1,6 @@
 # FICOMP
 
-`FICOMP` implements the distinct architectural operation named FICOMP in XED category X87_ALU; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FICOMP` compares ST(0) with a signed integer memory operand, records x87 condition codes, and pops ST(0). The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

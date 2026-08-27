@@ -1,6 +1,6 @@
 # LFS
 
-`LFS` implements the distinct architectural operation named LFS in XED category SEGOP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`LFS` loads an offset and an accompanying selector from memory, placing the selector in FS and the offset in a general-purpose register. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # VRNDSCALEPH
 
-`VRNDSCALEPH` implements the distinct architectural operation named VRNDSCALEPH in XED category FP16; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VRNDSCALEPH` scales and rounds packed IEEE binary16 floating-point elements according to immediate rounding/scale control, then rescales the rounded values to the requested numerical domain. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

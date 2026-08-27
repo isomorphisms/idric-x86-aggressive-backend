@@ -1,6 +1,6 @@
 # VGETMANTSH
 
-`VGETMANTSH` implements the distinct architectural operation named VGETMANTSH in XED category FP16; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VGETMANTSH` normalizes a scalar IEEE binary16 floating-point element to expose mantissas in an interval selected by immediate control and applies the requested sign control. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

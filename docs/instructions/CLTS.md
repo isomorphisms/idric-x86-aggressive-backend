@@ -1,6 +1,6 @@
 # CLTS
 
-`CLTS` implements the distinct architectural operation named CLTS in XED category SYSTEM; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`CLTS` clears CR0.TS so x87/SIMD state can be used without triggering the device-not-available exception used by lazy context switching. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

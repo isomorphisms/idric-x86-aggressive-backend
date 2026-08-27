@@ -1,6 +1,6 @@
 # RSTORSSP
 
-`RSTORSSP` computes a bitwise inclusive-or over its operands. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`RSTORSSP` restores the CET shadow-stack pointer from a restore token in memory and updates the token state required by shadow-stack switching. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

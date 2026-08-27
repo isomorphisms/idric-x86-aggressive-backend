@@ -1,6 +1,6 @@
 # VPCONFLICTQ
 
-`VPCONFLICTQ` implements the distinct architectural operation named VPCONFLICTQ in XED category CONFLICT; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPCONFLICTQ` computes, for each packed integer element, a bit mask identifying earlier lanes in the same vector that contain the same value. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

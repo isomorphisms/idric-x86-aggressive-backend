@@ -1,6 +1,6 @@
 # VLDMXCSR
 
-`VLDMXCSR` implements the distinct architectural operation named VLDMXCSR in XED category AVX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VLDMXCSR` loads MXCSR through the VEX-encoded form of the floating-point control-state load. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

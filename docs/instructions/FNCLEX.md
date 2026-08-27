@@ -1,6 +1,6 @@
 # FNCLEX
 
-`FNCLEX` implements the distinct architectural operation named FNCLEX in XED category X87_ALU; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FNCLEX` clears pending x87 exception flags and busy state without first performing the implicit wait used by the waiting form. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

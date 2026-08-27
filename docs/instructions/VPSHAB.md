@@ -1,6 +1,6 @@
 # VPSHAB
 
-`VPSHAB` implements the distinct architectural operation named VPSHAB in XED category XOP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 4 normalized encoding records and 3 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPSHAB` performs AMD XOP packed arithmetic shifts with per-element signed counts, using count sign to choose left versus arithmetic-right direction. The pinned XED inventory represents it with 4 normalized encoding records and 3 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

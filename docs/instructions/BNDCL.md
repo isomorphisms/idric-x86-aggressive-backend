@@ -1,6 +1,6 @@
 # BNDCL
 
-`BNDCL` implements the distinct architectural operation named BNDCL in XED category MPX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 4 normalized encoding records and 3 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`BNDCL` checks a pointer against the lower bound in a bound register and raises the MPX bounds exception when the pointer is below that bound. The pinned XED inventory represents it with 4 normalized encoding records and 3 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

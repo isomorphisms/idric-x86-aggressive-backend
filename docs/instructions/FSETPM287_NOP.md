@@ -1,6 +1,6 @@
 # FSETPM287_NOP
 
-`FSETPM287_NOP` implements the distinct architectural operation named FSETPM287_NOP in XED category X87_ALU; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FSETPM287_NOP` uses the 80287 protected-mode setup encoding, which later x87 processors retain as a no-operation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

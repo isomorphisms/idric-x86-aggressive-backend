@@ -1,6 +1,6 @@
 # WRUSSD
 
-`WRUSSD` implements the distinct architectural operation named WRUSSD in XED category CET; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`WRUSSD` writes a 32-bit value to a user shadow stack from privileged software using CET's explicit user-shadow-stack store mechanism. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

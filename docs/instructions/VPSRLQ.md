@@ -1,6 +1,6 @@
 # VPSRLQ
 
-`VPSRLQ` implements the distinct architectural operation named VPSRLQ in XED category AVX, AVX2, AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 18 normalized encoding records and 18 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPSRLQ` shifts packed integer elements right logically, filling vacated high bits with zeros; vector-count forms permit per-element counts where the encoding provides them. The pinned XED inventory represents it with 18 normalized encoding records and 18 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

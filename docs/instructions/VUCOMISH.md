@@ -1,6 +1,6 @@
 # VUCOMISH
 
-`VUCOMISH` implements the distinct architectural operation named VUCOMISH in XED category FP16; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VUCOMISH` compares two scalar binary16 values, writes the integer condition flags used by branches and SET/CMOV instructions, and uses unordered-comparison exception behavior for NaNs. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

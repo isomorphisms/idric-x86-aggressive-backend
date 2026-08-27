@@ -1,6 +1,6 @@
 # SLWPCB
 
-`SLWPCB` implements the distinct architectural operation named SLWPCB in XED category XOP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`SLWPCB` stores or exposes the current AMD Lightweight Profiling Control Block address according to the LWP architectural interface. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

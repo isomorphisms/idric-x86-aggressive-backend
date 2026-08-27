@@ -1,6 +1,6 @@
 # UWRMSR
 
-`UWRMSR` implements the distinct architectural operation named UWRMSR in XED category APX, USER_MSR; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`UWRMSR` writes an operating-system-authorized user-mode MSR through the user-MSR facility without granting arbitrary WRMSR privilege. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

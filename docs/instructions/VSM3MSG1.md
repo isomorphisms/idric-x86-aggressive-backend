@@ -1,6 +1,6 @@
 # VSM3MSG1
 
-`VSM3MSG1` implements the distinct architectural operation named VSM3MSG1 in XED category VEX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VSM3MSG1` performs the first SM3 message-schedule expansion transformation on packed 32-bit words. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

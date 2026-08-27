@@ -1,6 +1,6 @@
 # VSM4KEY4
 
-`VSM4KEY4` implements the distinct architectural operation named VSM4KEY4 in XED category AVX512, VEX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 10 normalized encoding records and 10 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VSM4KEY4` computes four SM4 key-schedule words from packed 32-bit state. The pinned XED inventory represents it with 10 normalized encoding records and 10 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

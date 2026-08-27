@@ -1,6 +1,6 @@
 # BNDMOV
 
-`BNDMOV` moves or copies data between its permitted operand classes. The pinned XED inventory represents it with 8 normalized encoding records and 5 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`BNDMOV` copies an MPX bound pair between bound registers and memory without performing a bounds check. The pinned XED inventory represents it with 8 normalized encoding records and 5 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

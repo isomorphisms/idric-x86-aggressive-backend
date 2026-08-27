@@ -1,6 +1,6 @@
 # VRANGESS
 
-`VRANGESS` implements the distinct architectural operation named VRANGESS in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VRANGESS` selects and sign-controls range extrema for a scalar single-precision floating-point element according to immediate control, combining min/max-style selection with the encoded sign rule. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

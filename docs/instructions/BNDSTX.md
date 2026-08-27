@@ -1,6 +1,6 @@
 # BNDSTX
 
-`BNDSTX` implements the distinct architectural operation named BNDSTX in XED category MPX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 4 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`BNDSTX` stores MPX bounds metadata for a pointer into the bounds-table structures associated with the current address space. The pinned XED inventory represents it with 4 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

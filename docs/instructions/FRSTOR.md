@@ -1,6 +1,6 @@
 # FRSTOR
 
-`FRSTOR` computes a bitwise inclusive-or over its operands. The pinned XED inventory represents it with 7 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FRSTOR` restores the x87 environment and register-stack contents from an FSAVE-format memory image. The pinned XED inventory represents it with 7 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

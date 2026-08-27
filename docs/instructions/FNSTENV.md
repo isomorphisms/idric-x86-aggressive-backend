@@ -1,6 +1,6 @@
 # FNSTENV
 
-`FNSTENV` implements the distinct architectural operation named FNSTENV in XED category X87_ALU; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 7 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FNSTENV` stores the x87 environment to memory without first waiting for pending x87 exceptions. The pinned XED inventory represents it with 7 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

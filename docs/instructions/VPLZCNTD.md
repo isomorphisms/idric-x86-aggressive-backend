@@ -1,6 +1,6 @@
 # VPLZCNTD
 
-`VPLZCNTD` implements the distinct architectural operation named VPLZCNTD in XED category CONFLICT; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPLZCNTD` counts leading zero bits independently in each packed 32-bit or 64-bit integer lane. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

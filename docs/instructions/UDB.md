@@ -1,6 +1,6 @@
 # UDB
 
-`UDB` implements the distinct architectural operation named UDB in XED category MISC; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`UDB` is the permanently undefined one-byte instruction in 64-bit mode and therefore raises the invalid-opcode exception there. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # POPF
 
-`POPF` implements the distinct architectural operation named POPF in XED category POP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 3 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`POPF` pops a 16-bit FLAGS image from the stack and updates those flag bits the current privilege level is allowed to modify. The pinned XED inventory represents it with 3 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

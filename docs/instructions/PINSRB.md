@@ -1,6 +1,6 @@
 # PINSRB
 
-`PINSRB` implements the distinct architectural operation named PINSRB in XED category SSE; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PINSRB` inserts a scalar byte from a register or memory source into the packed destination lane selected by the immediate index. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

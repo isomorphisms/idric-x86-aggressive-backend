@@ -1,6 +1,6 @@
 # VPSRAQ
 
-`VPSRAQ` implements the distinct architectural operation named VPSRAQ in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 12 normalized encoding records and 12 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPSRAQ` shifts packed signed integer elements right arithmetically, replicating each element's sign bit into the vacated high positions. The pinned XED inventory represents it with 12 normalized encoding records and 12 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

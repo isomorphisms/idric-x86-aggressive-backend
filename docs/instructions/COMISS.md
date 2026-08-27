@@ -1,6 +1,6 @@
 # COMISS
 
-`COMISS` implements the distinct architectural operation named COMISS in XED category SSE; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`COMISS` compares two scalar single-precision values, writes the integer condition flags used by branches and SET/CMOV instructions, and uses ordered-comparison exception behavior for NaNs. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

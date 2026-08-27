@@ -1,6 +1,6 @@
 # WRMSRLIST
 
-`WRMSRLIST` implements the distinct architectural operation named WRMSRLIST in XED category MSRLIST; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`WRMSRLIST` writes a hardware-defined list of model-specific registers using the MSR-list interface. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

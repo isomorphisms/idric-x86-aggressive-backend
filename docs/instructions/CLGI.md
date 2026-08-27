@@ -1,6 +1,6 @@
 # CLGI
 
-`CLGI` implements the distinct architectural operation named CLGI in XED category SYSTEM; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`CLGI` clears AMD SVM's global-interrupt flag, blocking interrupt delivery governed by that virtualization state until it is set again. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

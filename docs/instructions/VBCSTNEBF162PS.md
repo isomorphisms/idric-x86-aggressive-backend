@@ -1,6 +1,6 @@
 # VBCSTNEBF162PS
 
-`VBCSTNEBF162PS` implements the distinct architectural operation named VBCSTNEBF162PS in XED category BROADCAST; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VBCSTNEBF162PS` broadcasts the selected narrow bfloat16 source values into single-precision floating-point lanes using the instruction's even/odd element selection semantics. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

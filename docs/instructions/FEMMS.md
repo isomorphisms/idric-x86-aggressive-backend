@@ -1,6 +1,6 @@
 # FEMMS
 
-`FEMMS` implements the distinct architectural operation named FEMMS in XED category MMX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FEMMS` performs AMD's faster MMX-state exit operation, marking the shared MMX/x87 register state available for x87 use. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

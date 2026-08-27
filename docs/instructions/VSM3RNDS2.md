@@ -1,6 +1,6 @@
 # VSM3RNDS2
 
-`VSM3RNDS2` implements the distinct architectural operation named VSM3RNDS2 in XED category VEX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VSM3RNDS2` executes two SM3 compression rounds using packed state and message words. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

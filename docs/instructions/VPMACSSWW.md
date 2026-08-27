@@ -1,6 +1,6 @@
 # VPMACSSWW
 
-`VPMACSSWW` implements the distinct architectural operation named VPMACSSWW in XED category XOP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPMACSSWW` performs an AMD XOP packed integer multiply-accumulate operation, with the mnemonic selecting signedness, source width, accumulation width, and saturating versus wrapping behavior. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

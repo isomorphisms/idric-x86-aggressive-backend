@@ -1,6 +1,6 @@
 # VSHA512RNDS2
 
-`VSHA512RNDS2` implements the distinct architectural operation named VSHA512RNDS2 in XED category SHA512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VSHA512RNDS2` executes two SHA-512 compression rounds on packed state and message words. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

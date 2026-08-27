@@ -1,6 +1,6 @@
 # VPSRAVQ
 
-`VPSRAVQ` implements the distinct architectural operation named VPSRAVQ in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPSRAVQ` shifts packed signed integer elements right arithmetically, replicating each element's sign bit into the vacated high positions. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # SEAMRET
 
-`SEAMRET` implements the distinct architectural operation named SEAMRET in XED category LEGACY; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`SEAMRET` returns from SEAM VMX-root operation to the calling legacy VMX-root environment. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

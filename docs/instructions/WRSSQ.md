@@ -1,6 +1,6 @@
 # WRSSQ
 
-`WRSSQ` implements the distinct architectural operation named WRSSQ in XED category CET; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`WRSSQ` writes a 64-bit value to shadow-stack memory through CET's explicit shadow-stack store mechanism. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

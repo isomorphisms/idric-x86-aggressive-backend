@@ -1,6 +1,6 @@
 # FENI8087_NOP
 
-`FENI8087_NOP` implements the distinct architectural operation named FENI8087_NOP in XED category X87_ALU; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FENI8087_NOP` uses an encoding that enabled x87 interrupt reporting on the 8087 but is architecturally treated as a no-operation on later x87 implementations. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

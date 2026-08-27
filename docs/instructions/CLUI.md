@@ -1,6 +1,6 @@
 # CLUI
 
-`CLUI` implements the distinct architectural operation named CLUI in XED category UINTR; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`CLUI` clears the user-interrupt flag so maskable user interrupts are not delivered in the current user-interrupt context. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

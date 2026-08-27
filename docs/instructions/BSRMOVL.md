@@ -1,6 +1,6 @@
 # BSRMOVL
 
-`BSRMOVL` moves or copies data between its permitted operand classes. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`BSRMOVL` moves the low half of the ACE block-scale register between the block-scale state and a vector source or destination as defined by its form. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # VPINSRW
 
-`VPINSRW` implements the distinct architectural operation named VPINSRW in XED category AVX, AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPINSRW` inserts a scalar 16-bit word from a register or memory source into the packed destination lane selected by the immediate index. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

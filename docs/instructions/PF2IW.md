@@ -1,6 +1,6 @@
 # PF2IW
 
-`PF2IW` implements the distinct architectural operation named PF2IW in XED category 3DNOW; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PF2IW` converts two packed 3DNow! floating-point values to signed 16-bit integer results represented in MMX lanes. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # SALC
 
-`SALC` implements the distinct architectural operation named SALC in XED category FLAGOP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`SALC` sets AL to all ones when carry is set and to zero when carry is clear; it is a historical undocumented instruction on processors that implement it. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

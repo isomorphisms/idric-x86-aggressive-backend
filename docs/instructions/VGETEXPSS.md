@@ -1,6 +1,6 @@
 # VGETEXPSS
 
-`VGETEXPSS` implements the distinct architectural operation named VGETEXPSS in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VGETEXPSS` extracts unbiased base-2 exponent values from a scalar single-precision floating-point element, with special values handled according to the instruction's floating-point rules. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

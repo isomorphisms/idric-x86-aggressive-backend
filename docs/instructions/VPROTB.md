@@ -1,6 +1,6 @@
 # VPROTB
 
-`VPROTB` rotates encoded bit fields. The pinned XED inventory represents it with 6 normalized encoding records and 5 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VPROTB` performs AMD XOP packed per-element rotates using signed variable rotate counts supplied by the control operand. The pinned XED inventory represents it with 6 normalized encoding records and 5 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

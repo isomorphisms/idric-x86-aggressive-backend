@@ -1,6 +1,6 @@
 # PCONFIG
 
-`PCONFIG` implements the distinct architectural operation named PCONFIG in XED category PCONFIG; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PCONFIG` invokes a platform-configuration leaf selected by registers, providing a privileged architectural entry point for configuration operations such as key programming. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

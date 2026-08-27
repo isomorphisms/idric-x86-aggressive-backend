@@ -1,6 +1,6 @@
 # XABORT
 
-`XABORT` computes a bitwise inclusive-or over its operands. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`XABORT` explicitly aborts the current RTM transaction and records the immediate abort code in the transactional status returned to the fallback path. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # CMPPXADD
 
-`CMPPXADD` adds values in the operand format encoded by the mnemonic (32-bit doubleword elements). The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`CMPPXADD` performs the APX CMPccXADD atomic compare-and-conditional-add primitive: it compares the memory value with the comparison operand and adds the update operand to memory when the resulting condition is parity. The pinned XED inventory represents it with 4 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

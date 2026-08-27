@@ -1,6 +1,6 @@
 # FCMOVU
 
-`FCMOVU` moves or copies data between its permitted operand classes. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`FCMOVU` copies an x87 source register into ST(0) only when the integer EFLAGS condition says parity is set, leaving ST(0) unchanged otherwise. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

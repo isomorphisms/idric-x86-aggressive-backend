@@ -1,6 +1,6 @@
 # WBNOINVD
 
-`WBNOINVD` implements the distinct architectural operation named WBNOINVD in XED category SYSTEM; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`WBNOINVD` writes modified cache lines back toward memory without invalidating the caches, providing a whole-cache writeback operation distinct from WBINVD. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

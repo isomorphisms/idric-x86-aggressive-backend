@@ -1,6 +1,6 @@
 # ENCLS
 
-`ENCLS` implements the distinct architectural operation named ENCLS in XED category SGX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`ENCLS` dispatches a privileged Intel SGX enclave-management leaf selected in EAX, with the other implicit registers interpreted according to that leaf. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # VLDDQU
 
-`VLDDQU` implements the distinct architectural operation named VLDDQU in XED category AVX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VLDDQU` loads unaligned vector integer data using the VEX-encoded LDDQU streaming-load form. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # PVALIDATE
 
-`PVALIDATE` implements the distinct architectural operation named PVALIDATE in XED category SYSTEM; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PVALIDATE` validates or rescinds validation of an AMD SEV-SNP guest page's reverse-map-table entry and returns status through EAX and flags. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

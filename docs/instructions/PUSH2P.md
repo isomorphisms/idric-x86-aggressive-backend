@@ -1,6 +1,6 @@
 # PUSH2P
 
-`PUSH2P` implements the distinct architectural operation named PUSH2P in XED category PUSH; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PUSH2P` uses Intel APX's paired push form to save two general-purpose register values with the preserve-oriented semantics defined for the P-suffixed form. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

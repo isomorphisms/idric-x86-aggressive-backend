@@ -1,6 +1,6 @@
 # VMFUNC
 
-`VMFUNC` implements the distinct architectural operation named VMFUNC in XED category VTX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VMFUNC` invokes a VM function selected by EAX while executing in VMX non-root operation, subject to VMCS enablement of that function. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

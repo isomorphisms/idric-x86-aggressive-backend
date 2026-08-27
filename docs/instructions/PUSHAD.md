@@ -1,6 +1,6 @@
 # PUSHAD
 
-`PUSHAD` implements the distinct architectural operation named PUSHAD in XED category PUSH; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PUSHAD` pushes the legacy set of 32-bit general-purpose registers in the architecturally defined order while preserving the original ESP value in the saved image. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

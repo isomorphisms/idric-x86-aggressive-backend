@@ -1,6 +1,6 @@
 # VGETEXPPH
 
-`VGETEXPPH` implements the distinct architectural operation named VGETEXPPH in XED category FP16; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VGETEXPPH` extracts unbiased base-2 exponent values from packed IEEE binary16 floating-point elements, with special values handled according to the instruction's floating-point rules. The pinned XED inventory represents it with 7 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

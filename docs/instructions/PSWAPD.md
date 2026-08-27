@@ -1,6 +1,6 @@
 # PSWAPD
 
-`PSWAPD` implements the distinct architectural operation named PSWAPD in XED category 3DNOW; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PSWAPD` swaps the two 32-bit halves of an MMX register using AMD 3DNow! semantics. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # VSCALEFBF16
 
-`VSCALEFBF16` implements the distinct architectural operation named VSCALEFBF16 in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VSCALEFBF16` scales bfloat16 elements by powers of two whose exponents are derived from the corresponding second-source elements. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

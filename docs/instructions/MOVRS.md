@@ -1,6 +1,6 @@
 # MOVRS
 
-`MOVRS` moves or copies data between its permitted operand classes. The pinned XED inventory represents it with 5 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`MOVRS` loads data with the MOVRS read-shared semantic hint, allowing coherent shared-data reads to avoid unnecessarily requesting exclusive ownership. The pinned XED inventory represents it with 5 normalized encoding records and 4 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

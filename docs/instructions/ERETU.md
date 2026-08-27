@@ -1,6 +1,6 @@
 # ERETU
 
-`ERETU` implements the distinct architectural operation named ERETU in XED category FRED; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`ERETU` returns from a FRED-delivered event to user context, restoring the saved user return state and performing the FRED privilege transition. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

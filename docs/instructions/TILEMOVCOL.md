@@ -1,6 +1,6 @@
 # TILEMOVCOL
 
-`TILEMOVCOL` moves or copies data between its permitted operand classes. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`TILEMOVCOL` moves a selected column of ACE tile data into the instruction's vector destination so column-oriented tile data can be consumed outside the tile register file. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

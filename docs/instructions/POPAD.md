@@ -1,6 +1,6 @@
 # POPAD
 
-`POPAD` implements the distinct architectural operation named POPAD in XED category POP; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`POPAD` pops the legacy 32-bit general-purpose register set in the architecturally defined order while discarding the saved ESP slot. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

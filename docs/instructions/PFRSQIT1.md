@@ -1,6 +1,6 @@
 # PFRSQIT1
 
-`PFRSQIT1` implements the distinct architectural operation named PFRSQIT1 in XED category 3DNOW; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PFRSQIT1` performs the first Newton-Raphson refinement step used with the 3DNow! reciprocal-square-root estimate. The pinned XED inventory represents it with 2 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # BNDCN
 
-`BNDCN` implements the distinct architectural operation named BNDCN in XED category MPX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 4 normalized encoding records and 3 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`BNDCN` checks a pointer against the one's-complement upper bound held by an MPX bound register and raises the bounds exception when it exceeds the represented upper limit. The pinned XED inventory represents it with 4 normalized encoding records and 3 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

@@ -1,6 +1,6 @@
 # PBNDKB
 
-`PBNDKB` implements the distinct architectural operation named PBNDKB in XED category PBNDKB; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`PBNDKB` binds a platform key to a binary large object using the platform's key-binding mechanism and returns the architecture-defined result state. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

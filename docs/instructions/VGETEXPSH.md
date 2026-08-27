@@ -1,6 +1,6 @@
 # VGETEXPSH
 
-`VGETEXPSH` implements the distinct architectural operation named VGETEXPSH in XED category FP16; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VGETEXPSH` extracts unbiased base-2 exponent values from a scalar IEEE binary16 floating-point element, with special values handled according to the instruction's floating-point rules. The pinned XED inventory represents it with 3 normalized encoding records and 2 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

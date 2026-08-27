@@ -1,6 +1,6 @@
 # TOP2BF16PS
 
-`TOP2BF16PS` implements the distinct architectural operation named TOP2BF16PS in XED category AMX_TILE; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`TOP2BF16PS` computes an ACE tile outer-product from paired bfloat16 source values and accumulates the resulting products into single-precision destination elements. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

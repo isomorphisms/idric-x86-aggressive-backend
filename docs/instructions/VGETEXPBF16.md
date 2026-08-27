@@ -1,6 +1,6 @@
 # VGETEXPBF16
 
-`VGETEXPBF16` implements the distinct architectural operation named VGETEXPBF16 in XED category AVX512; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`VGETEXPBF16` extracts unbiased base-2 exponent values from bfloat16 elements, with special values handled according to the instruction's floating-point rules. The pinned XED inventory represents it with 6 normalized encoding records and 6 distinct IFORM/disassembly combinations. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

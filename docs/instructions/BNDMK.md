@@ -1,6 +1,6 @@
 # BNDMK
 
-`BNDMK` implements the distinct architectural operation named BNDMK in XED category MPX; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`BNDMK` constructs an MPX lower/upper bound pair from an effective address and a bound-size expression and writes it to a bound register. The pinned XED inventory represents it with 2 normalized encoding records and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 

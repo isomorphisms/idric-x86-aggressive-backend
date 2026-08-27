@@ -1,6 +1,6 @@
 # ERETS
 
-`ERETS` implements the distinct architectural operation named ERETS in XED category FRED; the pinned Intel/AMD reference defines its exact data transformation. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
+`ERETS` returns from a FRED-delivered event while remaining in supervisor context, restoring the saved event-return state without a privilege transition. The pinned XED inventory represents it with 1 normalized encoding record and 1 distinct IFORM/disassembly combination. Those encodings are implementation choices beneath the instruction's architectural meaning; this page keeps them grouped under one mnemonic-level operation.
 
 ## Family and availability
 
