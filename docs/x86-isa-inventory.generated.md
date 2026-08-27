@@ -2,17 +2,29 @@
 
 > Generated from pinned Intel XED metadata. Do not hand-edit this file.
 
-XED version: `v2026.08.23`
+XED revision: `v2026.08.23`
+Source: `intelxed/xed@0bcb6237345c5066726dcc08b3d87928df3b5b26`
 
-- instruction records: **10,994**
+- XED instruction records: **10,994**
 - unique instruction classes (ICLASS): **1,987**
-- unique instruction forms (IFORM): **9,001**
+- unique concrete forms (IFORM): **9,001**
 - XED extensions: **109**
 - XED categories: **113**
 
+XED records and IFORMs are deliberately counted separately. `generated/xed-instructions.tsv` keeps every exported XED record; `generated/xed-iform-index.tsv` has exactly one row per unique IFORM and reports how many XED records contribute to that form. Repeated IFORMs are not silently collapsed because their mode, encoding, operand, or other metadata may differ.
+
 The complete mnemonic-class list is in `generated/xed-iclasses.txt`. 
 The concrete form list is in `generated/xed-iforms.txt`. 
-The full row-level metadata is in `generated/xed-instructions.tsv`.
+The full normalized record-level metadata is in `generated/xed-instructions.tsv`.
+
+## Vendor scope stated by XED
+
+`unspecified` means exactly that: the exported XED record did not state a vendor-only marker. It must not be read as 'shared by Intel and AMD'. Manual cross-checks remain a separate layer.
+
+| vendor scope | records |
+|---|---:|
+| amd-only | 420 |
+| unspecified | 10,574 |
 
 ## By XED extension
 
@@ -248,4 +260,4 @@ The full row-level metadata is in `generated/xed-instructions.tsv`.
 
 ## Inventory rule
 
-Inventory completeness and backend support are different questions. Nothing in these generated files implies that the Idriç backend should emit every listed instruction. Backend support should be tracked separately.
+Inventory completeness and backend support are different questions. Nothing in these generated files implies that the Idriç backend should emit every listed instruction. Backend support is intentionally tracked outside the generated inventory.
