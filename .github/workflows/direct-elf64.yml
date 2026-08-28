@@ -27,4 +27,4 @@ jobs:
       - run: dd if=build/print-x of=build/print-x.code bs=1 skip=4096 count=42 status=none
       - run: objdump -D -b binary -m i386:x86-64 -Mintel --adjust-vma=0x401000 build/print-x.code
       - run: cat build/print-x.instructions
-      - run: test "$(readelf -d build/print-x 2>&1)" = "There is no dynamic section in this file."
+      - run: "! readelf -l build/print-x | grep -Eq 'INTERP|DYNAMIC'"
