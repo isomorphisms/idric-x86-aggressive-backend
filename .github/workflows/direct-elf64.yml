@@ -1,0 +1,30 @@
+name: direct-elf64
+
+on:
+  push:
+    branches:
+      - backend/first-direct-elf64
+  pull_request:
+    paths:
+      - backend/**
+      - fixtures/**
+      - tests/**
+      - Makefile
+      - .github/workflows/direct-elf64.yml
+
+jobs:
+  native-x86-64:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: make test
+      - run: make all
+      - run: test "$(build/print-x)" = X
+      - run: readelf -h -l build/print-x
+      - run: dd if=build/print-x of=build/print-x.code bs=1 skip=4096 count=42 status=none
+      - run: objdump -D -b binary -m i386:x86-64 -Mintel --adjust-vma=0x401000 build/print-x.code
+      - run: cat build/print-x.instructions
+      - run: test "$(readelf -d build/print-x 2>&1)" = "There is no dynamic section in this file."
