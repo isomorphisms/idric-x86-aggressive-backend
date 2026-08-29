@@ -1,0 +1,42 @@
+name: refresh-isa-inventory
+
+on:
+  push:
+    branches:
+      - research/x86-isa-inventory
+    paths:
+      - .github/workflows/refresh-isa-inventory.yml
+      - research/source-pins.json
+      - scripts/refresh-xed-inventory.sh
+      - scripts/xed-json-to-inventory.py
+      - scripts/validate-xed-inventory.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/x86-isa-inventory
+          fetch-depth: 0
+
+      - name: Generate and validate inventory
+        run: bash scripts/refresh-xed-inventory.sh
+
+      - name: Commit generated inventory
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add generated docs/x86-isa-inventory.generated.md
+          if git diff --cached --quiet; then
+            echo "Inventory is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Generate x86 ISA inventory from pinned XED"
+          git push origin HEAD:research/x86-isa-inventory
