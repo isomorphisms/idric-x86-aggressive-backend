@@ -75,9 +75,9 @@ class CodeBuilder:
             f"movzx ebx, byte [rsi + rcx + {displacement}]",
         )
 
-    def cmp_ebx_imm8(self, value: int) -> None:
+    def cmp_ebx_byte_value(self, value: int) -> None:
         if not 0 <= value <= 0xFF:
-            raise ValueError("byte comparison immediate must fit 8 bits")
+            raise ValueError("byte comparison value must fit 8 bits")
         self._emit(b"\x81\xfb" + struct.pack("<I", value), f"cmp ebx, {value}")
 
     def add_eax_1(self) -> None:
@@ -146,6 +146,12 @@ def fixed_string_count_code(haystack: bytes, needle: bytes) -> tuple[bytes, str]
         raise ValueError("first probe limits the specialized needle to 128 bytes")
 
     positions = max(0, len(haystack) - len(needle) + 1)
+    if positions > 255:
+        raise ValueError(
+            "first native oracle reports through process exit status; "
+            "limit candidate starts to 255"
+        )
+
     builder = CodeBuilder()
     builder.lea_rsi_rip("haystack")
     builder.mov_r32_imm32(2, positions, f"mov edx, {positions} ; candidate starts")
@@ -157,7 +163,7 @@ def fixed_string_count_code(haystack: bytes, needle: bytes) -> tuple[bytes, str]
     builder.jump_above_or_equal("done")
     for offset, expected in enumerate(needle):
         builder.movzx_ebx_byte_rsi_rcx_disp8(offset)
-        builder.cmp_ebx_imm8(expected)
+        builder.cmp_ebx_byte_value(expected)
         builder.jump_not_equal("next")
     builder.add_eax_1()
 
