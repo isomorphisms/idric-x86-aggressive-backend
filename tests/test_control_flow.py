@@ -36,6 +36,16 @@ class ControlFlowTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "empty-pattern semantics"):
             fixed_string_count_code(b"abc", b"")
 
+    def test_exit_status_oracle_does_not_silently_truncate(self) -> None:
+        with self.assertRaisesRegex(ValueError, "process exit status"):
+            fixed_string_count_code(b"A" * 258, b"AAA")
+
+    def test_high_byte_values_compare_as_unsigned_data(self) -> None:
+        self.assertEqual(
+            self.run_counter(bytes([0xFF, 0x80, 0xFF]), bytes([0xFF]))[0],
+            2,
+        )
+
     def test_output_is_deterministic(self) -> None:
         first = fixed_string_count_elf(b"ACGTACGT", b"ACGT")
         second = fixed_string_count_elf(b"ACGTACGT", b"ACGT")
