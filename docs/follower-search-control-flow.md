@@ -8,7 +8,7 @@ It is stacked on the first direct ELF64 gate and deliberately stays below the st
 
 The small search workloads shared by `bioawk`, grep-like work, parser/dispatch fixtures, and later rendering front ends all need ordinary integer control flow before unusual x86 instructions are interesting. The initial x86 subset already reserved data movement, address calculation, integer arithmetic, compare/test, conditional branches, and direct branches for exactly this kind of executable evidence.
 
-The first native fixture specializes an exact fixed-string count over embedded bytes. It counts overlapping matches, so `AAAAA` searched for `AAA` returns three. Embedded NUL bytes remain ordinary data.
+The first native fixture specializes an exact fixed-string count over embedded bytes. It counts overlapping matches, so `AAAAA` searched for `AAA` returns three. Embedded NUL bytes and byte values above 127 remain ordinary data.
 
 The emitted loop uses ordinary x86 strengths instead of imitating Thumb instruction-for-instruction:
 
@@ -26,6 +26,7 @@ This is evidence for the user's "x86 is the wider road" hypothesis only in a nar
 - The haystack and needle are compile-time fixture bytes so the branch/search kernel can be inspected before runtime plumbing is introduced.
 - Empty-pattern semantics fail closed because that language/search rule has not been chosen here.
 - The first specialized needle is limited to 128 bytes so indexed loads need only the small displacement form. A later general lowering can choose larger displacements or another search strategy when a real fixture earns it.
+- The executable reports its test result through Linux process exit status, so this first oracle rejects more than 255 candidate start positions instead of silently truncating the observable count.
 - No SIMD, string instructions, BMI, AVX, AVX-512, or unusual loop instruction is used merely because x86 provides one.
 - No claim is made that this straight comparison loop is fast. It is the scalar semantic baseline against which Shift-Or/Shift-And, table-driven, branchless, or SIMD candidates can later be compared on the shared workloads.
 
@@ -35,8 +36,9 @@ This is evidence for the user's "x86 is the wider road" hypothesis only in a nar
 
 - overlapping count semantics;
 - absent and too-long needles;
-- embedded NUL bytes;
+- embedded NUL and high-byte values;
 - explicit rejection of the unsettled empty-pattern case;
+- explicit rejection before process-exit-status truncation can occur;
 - byte-for-byte deterministic generation;
 - fail-closed unresolved branch labels;
 - inspection text showing indexed loads and ordinary conditional branches.
