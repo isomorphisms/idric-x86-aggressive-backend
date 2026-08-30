@@ -14,14 +14,72 @@ on:
       - Makefile
       - .github/workflows/direct-elf64.yml
 
+env:
+  IDRIC_HEAD: 892c947efc67da891dc3e51cb98104a4bf81f12a
+
 jobs:
   native-x86-64:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out exact backend head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Check out pinned Idric emitter
+        uses: actions/checkout@v4
+        with:
+          repository: isomorphisms/Idric
+          ref: ${{ env.IDRIC_HEAD }}
+          path: .idric
+
+      - name: Verify pinned compiler head
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C .idric rev-parse HEAD)" = "$IDRIC_HEAD"
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Bootstrap pinned Idric compiler
+        run: ./.idric/edric bootstrap
+
       - run: python -m py_compile backend/idric_x86.py
-      - run: make test
+
+      - name: Run backend suite with real emitter configured
+        env:
+          EDRIC_COMPILER: ${{ github.workspace }}/.idric/edric
+          EDRIC_R128_SOURCE: ${{ github.workspace }}/.idric/examples/mathematical-one-step/R128Pipeline.idric
+        run: make test
+
+      - name: Run complete checked Idric to direct ELF64 handoff
+        run: make integration IDRIC_REPO="${{ github.workspace }}/.idric"
+
+      - name: Verify exact hosted handoff receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          receipt=build/r128.execution-receipt
+          backend_head=$(git rev-parse HEAD)
+
+          grep -Fx $'compiler_head\tisomorphisms/Idric\t'"$IDRIC_HEAD" "$receipt"
+          grep -Fx $'backend_head\tisomorphisms/idric-x86-aggressive-backend\t'"$backend_head" "$receipt"
+          test "$(grep -c $'^plan\t' "$receipt")" -eq 16
+          test "$(grep -c $'^observation\t' "$receipt")" -eq 16
+          grep -F $'stage\tcore_typecheck\tPASS\t' "$receipt"
+          grep -F $'stage\tone_step_form\tPASS\t' "$receipt"
+          grep -F $'stage\ttarget_codegen\tPASS\t' "$receipt"
+          grep -F $'stage\tnative_execution\tPASS\t' "$receipt"
+          grep -Fx $'fallback\tRefC\tABSENT' "$receipt"
+          grep -Fx $'fallback\tc_compiler\tABSENT' "$receipt"
+          grep -Fx $'fallback\tassembler\tABSENT' "$receipt"
+          grep -Fx $'fallback\tlinker\tABSENT' "$receipt"
+          grep -Fx $'fallback\tlibc\tABSENT' "$receipt"
+          grep -Fx $'observation\tscalar\tcontraction\texact_integer\t190' "$receipt"
+          grep -Fx $'observation\tscalar\tx_dot_x\texact_integer\t250' "$receipt"
+          grep -Fx $'observation\tscalar\tsphere_squared_norm\texact_integer\t1' "$receipt"
+
       - run: "! rg -n 'lower_bootstrap_source|frozen bootstrap recognizer' backend tests docs README.md"
