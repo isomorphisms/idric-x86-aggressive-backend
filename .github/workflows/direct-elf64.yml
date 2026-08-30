@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - backend/first-direct-elf64
+      - integration/checked-idric-r128-direct-elf64
   pull_request:
     paths:
       - backend/**
       - fixtures/**
       - tests/**
+      - docs/first-direct-elf64.md
       - Makefile
       - .github/workflows/direct-elf64.yml
 
@@ -20,11 +22,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: python -m py_compile backend/idric_x86.py
       - run: make test
-      - run: make all
-      - run: test "$(build/print-x)" = X
-      - run: readelf -h -l build/print-x
-      - run: dd if=build/print-x of=build/print-x.code bs=1 skip=4096 count=42 status=none
-      - run: objdump -D -b binary -m i386:x86-64 -Mintel --adjust-vma=0x401000 build/print-x.code
-      - run: cat build/print-x.instructions
-      - run: "! readelf -l build/print-x | grep -Eq 'INTERP|DYNAMIC'"
+      - run: "! rg -n 'lower_bootstrap_source|frozen bootstrap recognizer' backend tests docs README.md"

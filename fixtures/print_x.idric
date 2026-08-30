@@ -1,4 +1,0 @@
-module PrintX
-
-main : IO ()
-main = putChar 'X'

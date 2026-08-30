@@ -1,22 +1,32 @@
 PYTHON ?= python3
 BUILD := build
+IDRIC_REPO ?=
+IDRIC_COMPILER ?= $(IDRIC_REPO)/edric
+IDRIC_R128_SOURCE ?= $(IDRIC_REPO)/examples/mathematical-one-step/R128Pipeline.idric
+ARTIFACT := $(BUILD)/r128.math-one-step
+ELF := $(BUILD)/r128-math
 
-.PHONY: all test inspect clean
+.PHONY: all test integration inspect clean
 
-all: $(BUILD)/print-x
-
-$(BUILD)/print-x: fixtures/print_x.idric backend/idric_x86.py
-	mkdir -p $(BUILD)
-	$(PYTHON) backend/idric_x86.py $< -o $@ --listing $(BUILD)/print-x.instructions
+all: test
 
 test:
 	$(PYTHON) -m unittest discover -s tests -v
 
-inspect: all
-	readelf -h -l $(BUILD)/print-x
-	dd if=$(BUILD)/print-x of=$(BUILD)/print-x.code bs=1 skip=4096 count=42 status=none
-	objdump -D -b binary -m i386:x86-64 -Mintel --adjust-vma=0x401000 $(BUILD)/print-x.code
-	cat $(BUILD)/print-x.instructions
+integration:
+	test -n "$(IDRIC_REPO)" || { echo "IDRIC_REPO is required for the real compiler handoff" >&2; exit 2; }
+	test -x "$(IDRIC_COMPILER)"
+	test -f "$(IDRIC_R128_SOURCE)"
+	mkdir -p $(BUILD)
+	"$(IDRIC_COMPILER)" --emit-math-one-step "$(IDRIC_R128_SOURCE)" -o "$(ARTIFACT)"
+	$(PYTHON) backend/idric_x86.py "$(ARTIFACT)" --source "$(IDRIC_R128_SOURCE)" \
+		-o "$(ELF)" --listing "$(BUILD)/r128.instructions" \
+		--run-receipt "$(BUILD)/r128.execution-receipt"
+
+inspect: integration
+	readelf -h -l $(ELF)
+	cat $(BUILD)/r128.instructions
+	cat $(BUILD)/r128.execution-receipt
 
 clean:
 	rm -rf $(BUILD)
