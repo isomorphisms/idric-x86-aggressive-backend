@@ -15,7 +15,7 @@ on:
       - .github/workflows/direct-elf64.yml
 
 env:
-  IDRIC_HEAD: 55eda27c36c790e7164aec52d0f17ec534178e1a
+  IDRIC_HEAD: bdbb6afb432f101544992e078f0c618cead3d143
 
 jobs:
   native-x86-64:
