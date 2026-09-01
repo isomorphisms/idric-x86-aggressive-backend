@@ -1,0 +1,4 @@
+module Subtract
+
+main : IO ()
+main = putChar (chr (12 - 7))

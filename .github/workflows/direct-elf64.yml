@@ -1,0 +1,38 @@
+name: Checked Idric to direct x86-64 ELF64
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checked-direct-elf64:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Check out x86 backend
+        uses: actions/checkout@v4
+
+      - name: Check out pinned Idric compiler
+        uses: actions/checkout@v4
+        with:
+          repository: isomorphisms/Idric
+          ref: dd313277fedb2b678ff0df6769ed1330a2e80523
+          path: .idric
+
+      - name: Bootstrap pinned Idric compiler
+        working-directory: .idric
+        run: ./edric bootstrap
+
+      - name: Run checked compiler, backend, ELF, and native acceptance
+        run: make ci
+
+      - name: Retain compiler/backend/ELF/native evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checked-x86-64-evidence
+          path: build/checked-x86
+          if-no-files-found: error
