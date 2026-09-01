@@ -10,13 +10,13 @@ log="$artifact_root/current-head.log"
 current_stage=compiler_build
 passed=
 
-mkdir -p "$artifact_root"
-: > "$log"
-
 backend_sha=$(git -C "$repo_root" rev-parse HEAD)
 compiler_sha=$(git -C "$idric_repo" rev-parse HEAD)
 backend_dirty=$(if git -C "$repo_root" status --porcelain | grep -q .; then printf dirty; else printf clean; fi)
 compiler_dirty=$(if git -C "$idric_repo" status --porcelain | grep -q .; then printf dirty; else printf clean; fi)
+
+mkdir -p "$artifact_root"
+: > "$log"
 
 write_receipt() {
   outcome=$1
