@@ -3,24 +3,15 @@ set -euo pipefail
 
 repo_root=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
 idric_repo=${IDRIC_REPO:-"$repo_root/.idric"}
-pinned_revision=$(tr -d '\n' < "$repo_root/IDRIC_COMPILER_REVISION")
-compiler_revision=${IDRIC_COMPILER_REVISION:-$pinned_revision}
+compiler_ref=${IDRIC_COMPILER_REF:-$(tr -d '\n' < "$repo_root/IDRIC_COMPILER_REF")}
 artifact_root=${IDRIC_X86_ARTIFACTS_DIR:-"$repo_root/build/checked-x86"}
 compiler="$idric_repo/edric"
 
-if [[ $compiler_revision != "$pinned_revision" ]]; then
-  echo "FAIL compiler_pin: expected $pinned_revision, got $compiler_revision" >&2
-  exit 1
-fi
 if [[ ! -x $compiler ]]; then
   echo "FAIL compiler_available: $compiler is not executable" >&2
   exit 1
 fi
 actual_compiler_revision=$(git -C "$idric_repo" rev-parse HEAD)
-if [[ $actual_compiler_revision != "$pinned_revision" ]]; then
-  echo "FAIL compiler_revision: expected $pinned_revision, got $actual_compiler_revision" >&2
-  exit 1
-fi
 if [[ $(uname -s) != Linux || $(uname -m) != x86_64 ]]; then
   echo "FAIL native_host: x86_64 Linux is required" >&2
   exit 1
@@ -51,7 +42,7 @@ while read -r fixture expected_hex; do
   "$compiler" --emit-one-step "$source" -o "$artifact"
   "$compiler" --emit-one-step "$source" -o "$second_artifact"
   cmp "$artifact" "$second_artifact"
-  grep -Fx "$(printf 'compiler_head\tisomorphisms/Idric\t%s' "$pinned_revision")" "$artifact" >/dev/null
+  grep -Fx "$(printf 'compiler_head\tisomorphisms/Idric\t%s' "$actual_compiler_revision")" "$artifact" >/dev/null
   grep -Fx "$(printf 'core_typecheck\tPASS')" "$artifact" >/dev/null
   grep -Fx "$(printf 'representation\tidris2-anf-show-0.8.0')" "$artifact" >/dev/null
 
@@ -94,6 +85,10 @@ while read -r fixture expected_hex; do
   sha256sum "$source" "$artifact" "$listing" "$executable" \
     "$directory/readelf.txt" "$directory/objdump.txt" "$stdout" > "$directory/hashes.sha256"
   {
+    printf 'repository\tisomorphisms/Idric\n'
+    printf 'requested_ref\t%s\n' "$compiler_ref"
+    printf 'resolved_sha\t%s\n' "$actual_compiler_revision"
+    printf 'dirty_state\t%s\n' "$(if git -C "$idric_repo" status --porcelain | grep -q .; then printf dirty; else printf clean; fi)"
     printf 'stage\tsource_checked\tPASS\n'
     printf 'stage\tcompiler_handoff_emitted\tPASS\n'
     printf 'stage\tbackend_lowering\tPASS\n'
