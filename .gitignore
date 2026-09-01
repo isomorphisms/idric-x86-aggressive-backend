@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+/.idric/
+/build/
+/fixtures/build/
