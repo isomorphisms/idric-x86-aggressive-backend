@@ -5,7 +5,7 @@ repo_root=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
 idric_repo=${IDRIC_REPO:-"$repo_root/.idric"}
 compiler_ref=${IDRIC_COMPILER_REF:-$(tr -d '\n' < "$repo_root/IDRIC_COMPILER_REF")}
 artifact_root=${IDRIC_X86_ARTIFACTS_DIR:-"$repo_root/build/checked-x86"}
-compiler="$idric_repo/edric"
+compiler="$idric_repo/_/edric"
 
 if [[ ! -x $compiler ]]; then
   echo "FAIL compiler_available: $compiler is not executable" >&2
