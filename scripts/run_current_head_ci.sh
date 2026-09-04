@@ -3,6 +3,8 @@ set -Eeuo pipefail
 
 repo_root=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
 idric_repo=${IDRIC_REPO:-"$repo_root/.idric"}
+idric_support_root="$idric_repo/_"
+idric_compiler="$idric_support_root/build/exec/idris2"
 artifact_root=${IDRIC_X86_ARTIFACTS_DIR:-"$repo_root/build/checked-x86"}
 compiler_ref=${IDRIC_COMPILER_REF:-$(tr -d '\n' < "$repo_root/IDRIC_COMPILER_REF")}
 receipt="$artifact_root/current-head-receipt.tsv"
@@ -61,10 +63,10 @@ trap fail_receipt ERR
 
 passed="compiler_checkout"
 current_stage=compiler_build
-if [[ ! -x "$idric_repo/build/exec/idris2" ]]; then
-  "$idric_repo/_/edric" bootstrap 2>&1 | tee -a "$log"
+if [[ ! -x "$idric_compiler" ]]; then
+  "$idric_support_root/edric" bootstrap 2>&1 | tee -a "$log"
 fi
-"$idric_repo/build/exec/idris2" --version 2>&1 | tee -a "$log"
+"$idric_compiler" --version 2>&1 | tee -a "$log"
 passed="$passed compiler_build"
 
 current_stage=backend_unit
