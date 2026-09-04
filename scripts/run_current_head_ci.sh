@@ -62,7 +62,7 @@ trap fail_receipt ERR
 passed="compiler_checkout"
 current_stage=compiler_build
 if [[ ! -x "$idric_repo/build/exec/idris2" ]]; then
-  "$idric_repo/edric" bootstrap 2>&1 | tee -a "$log"
+  "$idric_repo/_/edric" bootstrap 2>&1 | tee -a "$log"
 fi
 "$idric_repo/build/exec/idris2" --version 2>&1 | tee -a "$log"
 passed="$passed compiler_build"
