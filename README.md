@@ -17,17 +17,22 @@ outcomes, a direct internal call, and six-argument register pressure. The
 production route uses no RefC, generated C, C compiler, assembler, linker,
 libc, CRT, or target-Chez fallback.
 
-The checked compiler dependency is `isomorphisms/Idric` revision
-`dd313277fedb2b678ff0df6769ed1330a2e80523` from Idric PR #63. It is also
-recorded in [`IDRIC_COMPILER_REVISION`](IDRIC_COMPILER_REVISION); integration
-fails if the checkout differs.
+The active compiler dependency is the declared `isomorphisms/Idric` branch
+recorded in [`IDRIC_COMPILER_REF`](IDRIC_COMPILER_REF), currently `Idriç`.
+CI resolves that branch for every run and records the exact compiler SHA that
+actually ran. Incompatibility with the current compiler fails the lane; it does
+not retry the first known-green revision.
+
+The first complete green tuple remains historical evidence: Idric PR #63 at
+`dd313277fedb2b678ff0df6769ed1330a2e80523` with backend
+`e11a69d4d00501531ee058fa3d880267d5fc6d2e`.
 
 ## Run the complete route
 
 ```sh
 git clone https://github.com/isomorphisms/Idric.git .idric
-git -C .idric checkout dd313277fedb2b678ff0df6769ed1330a2e80523
-.idric/edric bootstrap
+git -C .idric checkout Idriç
+.idric/_/edric bootstrap
 make ci
 ```
 

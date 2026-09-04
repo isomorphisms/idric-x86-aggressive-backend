@@ -124,7 +124,7 @@ a test double.  That proves artifact validation, planning, direct encoding, ELF
 execution, and the exact backend observations; it is not evidence that a real
 front end emitted the artifact.
 
-Run this additional handoff against the pinned checked-out Idriç compiler with:
+Run this additional handoff against the checked-out declared Idriç compiler with:
 
 ```sh
 make ci-unit IDRIC_REPO=/path/to/Idric

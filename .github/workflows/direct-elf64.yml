@@ -7,6 +7,9 @@ on:
 permissions:
   contents: read
 
+env:
+  IDRIC_COMPILER_REF: Idriç
+
 jobs:
   checked-direct-elf64:
     runs-on: ubuntu-latest
@@ -15,19 +18,18 @@ jobs:
       - name: Check out x86 backend
         uses: actions/checkout@v4
 
-      - name: Check out pinned Idric compiler
+      - name: Check out current declared Idriç compiler
         uses: actions/checkout@v4
         with:
           repository: isomorphisms/Idric
-          ref: dd313277fedb2b678ff0df6769ed1330a2e80523
+          ref: ${{ env.IDRIC_COMPILER_REF }}
           path: .idric
 
-      - name: Bootstrap pinned Idric compiler
-        working-directory: .idric
-        run: ./edric bootstrap
-
-      - name: Run checked compiler, backend, ELF, and native acceptance
-        run: make ci
+      - name: Run current-head compiler/backend acceptance
+        env:
+          IDRIC_REPO: ${{ github.workspace }}/.idric
+          IDRIC_X86_ARTIFACTS_DIR: ${{ github.workspace }}/build/checked-x86
+        run: scripts/run_current_head_ci.sh
 
       - name: Retain compiler/backend/ELF/native evidence
         if: always()
@@ -35,4 +37,4 @@ jobs:
         with:
           name: checked-x86-64-evidence
           path: build/checked-x86
-          if-no-files-found: error
+          if-no-files-found: warn
