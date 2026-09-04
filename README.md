@@ -32,7 +32,7 @@ The first complete green tuple remains historical evidence: Idric PR #63 at
 ```sh
 git clone https://github.com/isomorphisms/Idric.git .idric
 git -C .idric checkout Idriç
-.idric/edric bootstrap
+.idric/_/edric bootstrap
 make ci
 ```
 
