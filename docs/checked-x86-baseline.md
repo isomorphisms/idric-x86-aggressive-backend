@@ -3,8 +3,11 @@
 ## Canonical line
 
 The baseline branch is `backend/checked-idric-direct-elf64`, based on current
-`main` (`f834a160d4256147d7498c01a3da1df36b7b5687`). Its compiler handoff is
-Idric PR #63, revision `dd313277fedb2b678ff0df6769ed1330a2e80523`.
+`main` (`f834a160d4256147d7498c01a3da1df36b7b5687`). Ordinary integration follows
+the current declared Idric ref `Idriç` and records the SHA resolved for each
+run. The first known-green historical handoff was Idric PR #63, revision
+`dd313277fedb2b678ff0df6769ed1330a2e80523`; that SHA is evidence, not the
+active dependency selector.
 
 The compiler revision parses and elaborates ordinary `.idric` source, completes
 core checking, and invokes its built-in `idric-one-step` code generator. That
