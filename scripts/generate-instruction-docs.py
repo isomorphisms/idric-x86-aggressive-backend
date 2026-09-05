@@ -385,9 +385,22 @@ def mode_summary(rows):
 
 def cpl_summary(rows):
     values = sorted({r.get("cpl", "").strip() for r in rows if r.get("cpl", "").strip()})
-    if values == ["3"]: return "usable at CPL 3 subject to feature and OS enablement"
-    if values == ["0"]: return "requires CPL 0; ordinary user-mode code must not emit it"
-    return "CPL value(s): " + (", ".join(f"`{x}`" for x in values) if values else "not uniformly recorded")
+    rendered = ", ".join(f"`{value}`" for value in values) if values else "not uniformly recorded"
+    return f"XED CPL metadata: {rendered}; this records privilege metadata only and does not establish processor or feature availability"
+
+
+def manual_review_source(iclass):
+    table = Path(__file__).resolve().parent.parent / "research" / "vendor-differences.tsv"
+    if table.exists():
+        with table.open(newline="") as f:
+            reviewed = {
+                row["iclass"].strip()
+                for row in csv.DictReader(f, delimiter="\t")
+                if row.get("iclass", "").strip()
+            }
+        if iclass in reviewed:
+            return "- Manual Intel/AMD review: recorded for this ICLASS in `research/vendor-differences.tsv`; that sparse row names the pinned references and the portable rule."
+    return "- Manual Intel/AMD review: unreviewed for this ICLASS. Pinned AMD APM revisions are reference inputs, not evidence of a completed per-instruction semantic or availability cross-check."
 
 
 def preview_values(rows, key, limit=3):
@@ -418,7 +431,7 @@ def page(iclass, rows, pins):
     desc, fallback = general_semantics(iclass, rows)
     extensions = clean_extensions(rows)
     categories = clean_categories(rows)
-    vendors = sorted({r.get("vendor", "").strip() or "shared-or-unspecified" for r in rows})
+    vendors = sorted({r.get("vendor_scope", "").strip() or "unspecified" for r in rows})
     isa_sets = sorted({r.get("isa_set", "").strip() for r in rows if r.get("isa_set", "").strip()})
     forms = sorted({(r.get("iform", "").strip(), r.get("disasm_intel", "").strip()) for r in rows})
     form_lines = []
@@ -440,14 +453,14 @@ def page(iclass, rows, pins):
         f"- {mode_summary(rows)}", f"- {cpl_summary(rows)}", "",
         "## Architectural effects", "",
         f"Representative explicit operands: {preview_values(rows, 'explicit_operands')}. Representative implicit state: {preview_values(rows, 'implicit_operands')}.", "",
-        f"Recorded flag behavior: {preview_values(rows, 'flags')}.", "",
+        f"Recorded flag behavior: read {preview_values(rows, 'flags_read')}; written {preview_values(rows, 'flags_written')}; undefined {preview_values(rows, 'flags_undefined')}; raw XED {preview_values(rows, 'flags_raw')}.", "",
         "## Important forms", "", *form_lines, "",
         "The form list is intentionally representative rather than a copy of every encoding row. The row-level oracle remains `generated/xed-instructions.tsv`.", "",
         "## Backend notes", "", backend_paragraph(iclass, rows), "",
         "## Sources", "",
         f"- Intel XED `{xed.get('release', 'unknown')}` / commit `{xed.get('commit', 'unknown')}` — machine-readable ICLASS/IFORM and encoding metadata.",
         f"- Intel 64 and IA-32 SDM revision `{sdm.get('revision', 'unknown')}` — architectural semantics.",
-        "- AMD64 Architecture Programmer's Manual revisions pinned in `research/source-pins.json` — vendor-specific availability and semantic cross-checks.", ""
+        manual_review_source(iclass), ""
     ]), fallback
 
 
