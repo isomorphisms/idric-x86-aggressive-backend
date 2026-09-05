@@ -6,10 +6,12 @@ on:
       - scripts/generate-instruction-docs.py
       - scripts/generate-instruction-docs-reviewed.py
       - scripts/generate-instruction-docs-complete.py
+      - scripts/validate-instruction-doc-rendering.py
       - scripts/bundle-instruction-docs.py
       - generated/xed-instructions.tsv
       - generated/xed-iclasses.txt
       - research/source-pins.json
+      - research/vendor-differences.tsv
       - .github/workflows/generate-instruction-reference.yml
   push:
     branches:
@@ -18,10 +20,12 @@ on:
       - scripts/generate-instruction-docs.py
       - scripts/generate-instruction-docs-reviewed.py
       - scripts/generate-instruction-docs-complete.py
+      - scripts/validate-instruction-doc-rendering.py
       - scripts/bundle-instruction-docs.py
       - generated/xed-instructions.tsv
       - generated/xed-iclasses.txt
       - research/source-pins.json
+      - research/vendor-differences.tsv
       - .github/workflows/generate-instruction-reference.yml
   workflow_dispatch:
 
@@ -39,6 +43,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Validate normalized metadata rendering
+        run: python3 scripts/validate-instruction-doc-rendering.py
       - name: Generate complete reviewed instruction prose
         run: python3 scripts/generate-instruction-docs-complete.py
       - name: Require zero semantic fallbacks
