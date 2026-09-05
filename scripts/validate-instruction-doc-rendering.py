@@ -8,11 +8,11 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SPEC = importlib.util.spec_from_file_location(
-    "instruction_docs_complete", HERE / "generate-instruction-docs-complete.py"
+    "instruction_docs", HERE / "generate-instruction-docs.py"
 )
-complete = importlib.util.module_from_spec(SPEC)
+generator = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None
-SPEC.loader.exec_module(complete)
+SPEC.loader.exec_module(generator)
 
 PINS = {
     "intel_xed": {"release": "test", "commit": "test"},
@@ -47,8 +47,8 @@ def require(condition, message):
 
 
 def main():
-    reviewed_text, _ = complete.reviewed.base.page("BSF", [row()], PINS)
-    unreviewed_text, _ = complete.reviewed.base.page(
+    reviewed_text, _ = generator.page("BSF", [row()], PINS)
+    unreviewed_text, _ = generator.page(
         "ADD", [row(vendor_scope="intel-only", isa_set="I86")], PINS
     )
 
