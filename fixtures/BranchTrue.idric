@@ -1,0 +1,4 @@
+module BranchTrue
+
+main : IO ()
+main = putChar (chr (if 7 < 12 then 41 else 99))

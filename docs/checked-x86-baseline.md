@@ -1,0 +1,144 @@
+# Checked Idriç to direct x86-64 baseline
+
+## Canonical line
+
+The baseline branch is `backend/checked-idric-direct-elf64`, based on current
+`main` (`f834a160d4256147d7498c01a3da1df36b7b5687`). Ordinary integration follows
+the current declared Idric ref `Idriç` and records the SHA resolved for each
+run. The first known-green historical handoff was Idric PR #63, revision
+`dd313277fedb2b678ff0df6769ed1330a2e80523`; that SHA is evidence, not the
+active dependency selector.
+
+The compiler revision parses and elaborates ordinary `.idric` source, completes
+core checking, and invokes its built-in `idric-one-step` code generator. That
+generator calls the compiler's own ANF compilation pass and serializes the
+result as `EDRIC_ONE_STEP_BODY v1`. The wrapper binds it to source SHA-256,
+the full compiler revision, `core_typecheck PASS`, a representation version,
+and a body SHA-256. No source recognizer or handwritten rows participate in
+this scalar route.
+
+The backend accepts only this artifact. It never parses `.idric` text; its
+optional source argument verifies only the recorded source digest. Unknown
+definitions, operations, calls, closures, applications, or artifact rows fail
+closed.
+
+## Real fixtures
+
+| Source | Compiler work exercised | Exact stdout | Exit |
+| --- | --- | ---: | ---: |
+| `PrintX.idric` | character constant and `putChar` | `58` (`X`) | 0 |
+| `Add.idric` | `12 + 7` | `13` | 0 |
+| `Subtract.idric` | `12 - 7` | `05` | 0 |
+| `Multiply.idric` | `12 * 7` | `54` | 0 |
+| `BranchTrue.idric` | `7 < 12`, true arm | `29` | 0 |
+| `BranchFalse.idric` | `12 < 7`, false arm | `63` | 0 |
+| `DirectCall.idric` | direct call `increment 40` | `29` | 0 |
+| `RegisterPressure.idric` | six-argument `sum_six` | `15` | 0 |
+
+Arithmetic fixtures deliberately write the resulting byte, so the table uses
+hexadecimal stdout. The expected results live in the acceptance test, not in
+the emitter. Inspection shows arithmetic, comparison, branches, and calls in
+the executable; the backend's exact range proof is validation and never folds
+the proved result into an output constant.
+
+## Supported one-step-at-a-time surface
+
+- signed-i64 integer and one-byte character constants;
+- variables and nested compiler lets;
+- value movement with deterministic actual stack spill slots where used;
+- `+Int`, `-Int`, `*Int` and bounded `Integer` counterparts;
+- `<`, `<=`, and `==` for the same bounded scalar representation;
+- compiler constant cases, conditional branches, and unconditional joins;
+- direct internal calls of up to six scalar arguments;
+- return in `rax`;
+- representation-preserving casts proven safe for this bounded route;
+- `Prelude.IO.prim__putChar` as direct Linux `write`, followed by process exit.
+
+Compiler names do not imply memory stores. The current correctness-first
+scheme assigns explicit stack homes when it actually spills, uses `rax` and
+`r11` for arithmetic reuse, passes direct-call arguments in six deterministic
+registers, eliminates the world token and safe casts, and records each decision
+in the backend plan. The pressure fixture proves the scheme does not silently
+miscompile when every argument register is occupied.
+
+The exact range proof currently requires the closed scalar execution to prove
+all reachable values fit signed i64 and the output fits one byte. This makes
+arbitrary-precision `Integer`, external input, wide-character UTF-8 output,
+and overflow fail as unsupported instead of inheriting accidental x86 wrapping.
+
+## Concrete x86-64 surface
+
+The scalar fixtures emit only baseline x86-64 encodings:
+
+- REX.W prefixes;
+- `mov` register/immediate, register/register, stack load, and stack store;
+- `add`, `sub`, and two-operand `imul`;
+- `cmp`, `setl`, `setle`, `sete`, and `movzx`;
+- `lea` for the output-byte address;
+- rel32 `call`, `jmp`, and `je` with deterministic fixups;
+- `ret`, `xor`, `syscall`, and an unreachable-default `ud2` guard;
+- `sub/add rsp, imm32` for deterministic aligned frames.
+
+No AVX, AVX2, AVX-512, BMI, AMX, string-instruction optimization, CPU dispatch,
+or vendor-specific extension is required. The XED inventory remains reference
+material rather than an implementation checklist.
+
+## Process, call, and ELF ownership
+
+The ELF entry is the compiler-owned process entry at virtual address
+`0x401000`. Linux supplies the initial stack; the program reads no startup
+arguments or environment. Entry frames are multiples of 16 bytes. Internal
+callees account for the pushed return address so nested call sites retain
+16-byte stack alignment.
+
+The internal convention uses `rdi`, `rsi`, `rdx`, `rcx`, `r8`, and `r9` for up
+to six scalar arguments and `rax` for the result. It is an Idriç backend
+convention, not a promise that all Idriç values have a C ABI representation.
+Output uses Linux x86-64 syscall 1 (`write`) and termination uses syscall 60
+(`exit`). There is no CRT or libc.
+
+`backend/elf64.py` writes the complete image in-process: ELF identification,
+`ET_EXEC`, machine 62, entry, one read/execute `PT_LOAD`, deterministic file and
+memory sizes, 4096-byte alignment, and code placement. The image has no
+sections, interpreter, dynamic segment, relocations, or external construction
+step. `file`, `readelf`, and `objdump` are independent validators only.
+
+## Reconciliation of the old stack
+
+- PR #3 remains the large XED inventory/research reference. The baseline does
+  not depend on its generated inventory; only its conclusion to implement a
+  tiny evidence-driven subset is retained.
+- PR #11 proved direct x86 bytes, minimal ELF64 ownership, Linux `write`/`exit`,
+  and exact `X` execution from a backend plan. Its useful ELF and encoding
+  ideas are consolidated here; its source regex recognizer is not.
+- PR #17's deterministic labels/fixups and scalar search/control-flow code are
+  preserved in `backend/x86_control.py` with its tests. The string-search
+  fixture is still a lower-level backend regression because the current small
+  compiler form does not yet expose strings or indexed byte loads.
+- PR #18's R128 artifact validator, scalar plan, direct encoding, ELF execution,
+  and receipts are preserved in `backend/r128_math.py`. The accompanying
+  checked R128 emitter runs in CI as an additional regression. Its source
+  manually prints domain-specific artifact rows, so it is not the definition
+  of the new compiler-owned scalar handoff.
+- Current `main` contributes the already-merged biology contrast workflow and
+  is the base of this branch. It was absent from every old stacked branch.
+
+The old branches share only the original repository commit with current main
+and diverge from each other above PR #11. A clean consolidation on current
+main was therefore safer than rebasing the large inventory and divergent R128
+and search histories. Working code was preserved; the speculative ISA
+inventory was not merged into the executable line.
+
+## Explicitly unsupported
+
+Unsupported today: general heap values, closures, partial application,
+recursion, calls with more than six scalar arguments, arbitrary-precision
+runtime integers, floating point, strings, arrays, allocation, external input,
+UTF-8 output beyond one byte, foreign/C interoperability, dynamic linking,
+non-Linux targets, and non-x86-64 targets.
+
+Search and biology remain preserved lower-level regressions rather than claimed
+checked compiler fixtures. R128 remains an additional domain-specific
+regression. No language-design question about tensors, rotations, refinement
+types, dimensions, or Float16 blocked this scalar baseline, and none was
+decided by it.

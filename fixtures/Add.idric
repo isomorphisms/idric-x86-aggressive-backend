@@ -1,0 +1,4 @@
+module Add
+
+main : IO ()
+main = putChar (chr (12 + 7))
