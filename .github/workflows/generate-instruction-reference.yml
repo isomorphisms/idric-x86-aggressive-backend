@@ -1,6 +1,16 @@
 name: Generate x86 instruction reference
 
 on:
+  pull_request:
+    paths:
+      - scripts/generate-instruction-docs.py
+      - scripts/generate-instruction-docs-reviewed.py
+      - scripts/generate-instruction-docs-complete.py
+      - scripts/bundle-instruction-docs.py
+      - generated/xed-instructions.tsv
+      - generated/xed-iclasses.txt
+      - research/source-pins.json
+      - .github/workflows/generate-instruction-reference.yml
   push:
     branches:
       - docs/bundle-x86-instruction-reference
@@ -25,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: docs/bundle-x86-instruction-reference
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -37,7 +47,8 @@ jobs:
         run: python3 scripts/bundle-instruction-docs.py
       - name: Verify exact bundled coverage
         run: python3 scripts/bundle-instruction-docs.py --check
-      - name: Commit generated reference
+      - name: Commit generated reference on source-branch pushes only
+        if: github.event_name == 'push'
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -47,4 +58,4 @@ jobs:
             exit 0
           fi
           git commit -m "Bundle x86 instruction semantic reference"
-          git push origin HEAD:docs/bundle-x86-instruction-reference
+          git push origin "HEAD:${GITHUB_REF_NAME}"
