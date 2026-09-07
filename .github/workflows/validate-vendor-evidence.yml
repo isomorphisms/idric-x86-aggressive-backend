@@ -1,0 +1,31 @@
+name: Validate vendor evidence
+
+on:
+  pull_request:
+    paths:
+      - "research/vendor-differences.tsv"
+      - "research/source-pins.json"
+      - "generated/xed-iclasses.txt"
+      - "scripts/validate-vendor-differences.py"
+      - ".github/workflows/validate-vendor-evidence.yml"
+  push:
+    branches:
+      - main
+      - research/x86-isa-inventory
+    paths:
+      - "research/vendor-differences.tsv"
+      - "research/source-pins.json"
+      - "generated/xed-iclasses.txt"
+      - "scripts/validate-vendor-differences.py"
+      - ".github/workflows/validate-vendor-evidence.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate manual Intel/AMD difference rows
+        run: python3 scripts/validate-vendor-differences.py
