@@ -9,6 +9,7 @@ permissions:
 
 env:
   IDRIC_COMPLEX_REF: math/complex-projective-semantics
+  SOURCE_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
 
 jobs:
   direct-complex-projective:
@@ -25,6 +26,9 @@ jobs:
           ref: ${{ env.IDRIC_COMPLEX_REF }}
           path: .idric-complex
 
+      - name: Record exact canonical semantic head
+        run: echo "IDRIC_COMPLEX_SEMANTICS_SHA=$(git -C .idric-complex rev-parse HEAD)" >> "$GITHUB_ENV"
+
       - name: Check generator syntax and existing backend unit tests
         run: |
           python3 -m py_compile backend/complex_projective.py scripts/run_complex_projective_acceptance.py
@@ -34,12 +38,11 @@ jobs:
         shell: bash
         run: |
           set -Eeuo pipefail
-          idric_sha=$(git -C .idric-complex rev-parse HEAD)
           python3 scripts/run_complex_projective_acceptance.py \
             --corpus .idric-complex/_/fixtures/complex-projective/float32.json \
             --artifacts build/complex-projective \
-            --backend-sha "$GITHUB_SHA" \
-            --idric-sha "$idric_sha"
+            --backend-sha "$SOURCE_HEAD_SHA" \
+            --idric-sha "$IDRIC_COMPLEX_SEMANTICS_SHA"
           if readelf -l build/complex-projective/complex-corpus.elf | grep -q INTERP; then
             echo 'complex corpus ELF unexpectedly has a dynamic interpreter' >&2
             exit 1
