@@ -35,4 +35,25 @@ cmp "$artifact_root/complex-projective-scene.ppm" \
   printf 'comparison\tbyte_identical_to_host_x86\tPASS\n'
 } > "$artifact_root/thin-debian-receipt.tsv"
 
+source_head=${SOURCE_HEAD_SHA:-$(git rev-parse HEAD)}
+tested_checkout=$(git rev-parse HEAD)
+canonical_semantics=${IDRIC_COMPLEX_SEMANTICS_SHA:-unresolved}
+
+{
+  printf 'COMPLEX_PROJECTIVE_RECEIPT\t1\n'
+  printf 'role\tX86_LEADER\n'
+  printf 'repository\tisomorphisms/idric-x86-aggressive-backend\n'
+  printf 'source_head_sha\t%s\n' "$source_head"
+  printf 'tested_checkout_sha\t%s\n' "$tested_checkout"
+  printf 'canonical_complex_projective_semantics_sha\t%s\n' "$canonical_semantics"
+  printf 'candidate\tdirect ELF64 x86-64; scalar SSE plus observational x87; no C assembler linker libc libm RefC LLVM\n'
+  printf 'stage\tdirect_backend_generation\tPASS\n'
+  printf 'stage\tnative_execution\tPASS\n'
+  printf 'stage\tnumerical_corpus\tPASS\n'
+  printf 'stage\tprojective_corpus\tPASS\n'
+  printf 'stage\tthin_debian_execution\tPASS\n'
+  printf 'stage\theadless_render\tPASS\n'
+} > "$artifact_root/acceptance-receipt.tsv"
+
 cat "$artifact_root/thin-debian-receipt.tsv"
+cat "$artifact_root/acceptance-receipt.tsv"
