@@ -1,0 +1,61 @@
+name: Complex/projective x86-64 leader
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  IDRIC_COMPLEX_REF: math/complex-projective-semantics
+
+jobs:
+  direct-complex-projective:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out x86 backend
+        uses: actions/checkout@v4
+
+      - name: Check out canonical complex/projective corpus
+        uses: actions/checkout@v4
+        with:
+          repository: isomorphisms/Idric
+          ref: ${{ env.IDRIC_COMPLEX_REF }}
+          path: .idric-complex
+
+      - name: Check generator syntax and existing backend unit tests
+        run: |
+          python3 -m py_compile backend/complex_projective.py scripts/run_complex_projective_acceptance.py
+          make unit
+
+      - name: Generate direct ELF64 numerical and render receipts
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          idric_sha=$(git -C .idric-complex rev-parse HEAD)
+          python3 scripts/run_complex_projective_acceptance.py \
+            --corpus .idric-complex/_/fixtures/complex-projective/float32.json \
+            --artifacts build/complex-projective \
+            --backend-sha "$GITHUB_SHA" \
+            --idric-sha "$idric_sha"
+          if readelf -l build/complex-projective/complex-corpus.elf | grep -q INTERP; then
+            echo 'complex corpus ELF unexpectedly has a dynamic interpreter' >&2
+            exit 1
+          fi
+          if readelf -l build/complex-projective/complex-render.elf | grep -q INTERP; then
+            echo 'render ELF unexpectedly has a dynamic interpreter' >&2
+            exit 1
+          fi
+
+      - name: Execute the same direct ELFs on thin Debian
+        run: scripts/run_complex_projective_thin_debian.sh build/complex-projective
+
+      - name: Retain direct numerical, projective, Debian, and render evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: complex-projective-x86-64-evidence
+          path: build/complex-projective
+          if-no-files-found: error
