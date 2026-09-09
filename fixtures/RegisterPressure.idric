@@ -1,0 +1,7 @@
+module RegisterPressure
+
+sum_six : Int -> Int -> Int -> Int -> Int -> Int -> Int
+sum_six a b c d e f = a + b + c + d + e + f
+
+main : IO ()
+main = putChar (chr (sum_six 1 2 3 4 5 6))

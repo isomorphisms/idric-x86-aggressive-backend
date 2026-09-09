@@ -1,0 +1,7 @@
+module DirectCall
+
+increment : Int -> Int
+increment value = value + 1
+
+main : IO ()
+main = putChar (chr (increment 40))
