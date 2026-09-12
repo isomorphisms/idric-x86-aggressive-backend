@@ -1,0 +1,78 @@
+name: Complex/projective x86-64 leader
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  IDRIC_COMPLEX_REF: math/complex-projective-semantics
+  SOURCE_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+  COMPLEX_PROJECTIVE_POLICY_SHA: 8e14cb50db10a055a0849e0ad7cab26454cd5791
+
+jobs:
+  direct-complex-projective:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, linux, debian]
+    timeout-minutes: 30
+    steps:
+      - name: Check out x86 backend
+        uses: actions/checkout@v4
+
+      - name: Check out canonical complex/projective corpus
+        uses: actions/checkout@v4
+        with:
+          repository: isomorphisms/Idric
+          ref: ${{ env.IDRIC_COMPLEX_REF }}
+          path: .idric-complex
+          persist-credentials: false
+
+      - name: Check out merged receipt policy
+        uses: actions/checkout@v4
+        with:
+          repository: isomorphisms/ai-ci
+          ref: ${{ env.COMPLEX_PROJECTIVE_POLICY_SHA }}
+          path: .ai-ci-complex-policy
+          persist-credentials: false
+
+      - name: Record exact canonical semantic head
+        run: echo "IDRIC_COMPLEX_SEMANTICS_SHA=$(git -C .idric-complex rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Check generator syntax and existing backend unit tests
+        run: |
+          python3 -m py_compile backend/complex_projective.py scripts/run_complex_projective_acceptance.py
+          make unit
+
+      - name: Generate direct ELF64 numerical and render receipts
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 scripts/run_complex_projective_acceptance.py \
+            --corpus .idric-complex/_/fixtures/complex-projective/float32.json \
+            --artifacts build/complex-projective \
+            --backend-sha "$SOURCE_HEAD_SHA" \
+            --idric-sha "$IDRIC_COMPLEX_SEMANTICS_SHA"
+          if readelf -l build/complex-projective/complex-corpus.elf | grep -q INTERP; then
+            echo 'complex corpus ELF unexpectedly has a dynamic interpreter' >&2
+            exit 1
+          fi
+          if readelf -l build/complex-projective/complex-render.elf | grep -q INTERP; then
+            echo 'render ELF unexpectedly has a dynamic interpreter' >&2
+            exit 1
+          fi
+
+      - name: Execute the same direct ELFs on thin Debian
+        run: scripts/run_complex_projective_thin_debian.sh build/complex-projective
+
+      - name: Verify leader evidence claims against merged policy
+        run: python3 .ai-ci-complex-policy/complex-projective/verify_receipt.py verify build/complex-projective/acceptance-receipt.tsv
+
+      - name: Retain direct numerical, projective, Debian, and render evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: complex-projective-x86-64-evidence
+          path: build/complex-projective
+          if-no-files-found: error
