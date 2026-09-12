@@ -28,7 +28,8 @@ Rebuild the checked-in executable with GNU binutils:
 
 ```sh
 as --64 -o framebuffer-red-x86-64.o framebuffer-red-x86-64.s
-ld -m elf_x86_64 -nostdlib --build-id=none -z noexecstack -s \
+ld -m elf_x86_64 -nostdlib --build-id=none -s \
+  -T framebuffer-red-x86-64.ld \
   -o framebuffer-red-x86-64.elf framebuffer-red-x86-64.o
 ```
 
@@ -36,7 +37,8 @@ Validation of the checked-in build:
 
 ```text
 source sha256: 5cb33db549d66192eb840c59c3285b32c12071d6e4c0f3791b10fa07a4df15e4
-ELF sha256:    34c24f4a820b09c45766624e0c47ab1733132dc834700e2dedfa1a2b7adccb1b
+linker sha256: 4d36ecd2f11f3174b2c9f856f7516299797ccd9bb47d5a7da6772204ced54252
+ELF sha256:    9c5d1c6cb534d78c94ca081b2165aa530d7f02f125bce96a6e32427bbc5d431b
 ELF:           64-bit LSB x86-64, statically linked, stripped, no PT_INTERP
 ```
 
